@@ -1,0 +1,48 @@
+"./Generated_Code/timers_c.obj"
+"./Generated_Code/tasks_c.obj"
+"./Generated_Code/stream_buffer_c.obj"
+"./Generated_Code/queue_c.obj"
+"./Generated_Code/portasm_s.obj"
+"./Generated_Code/port_c.obj"
+"./Generated_Code/mpu_wrappers_c.obj"
+"./Generated_Code/list_c.obj"
+"./Generated_Code/heap_useNewlib_c.obj"
+"./Generated_Code/heap_5_c.obj"
+"./Generated_Code/heap_4_c.obj"
+"./Generated_Code/heap_3_c.obj"
+"./Generated_Code/heap_2_c.obj"
+"./Generated_Code/heap_1_c.obj"
+"./Generated_Code/event_groups_c.obj"
+"./Generated_Code/croutine_c.obj"
+"./Generated_Code/Vectors_c.obj"
+"./Generated_Code/VL1swi_c.obj"
+"./Generated_Code/UTIL1_c.obj"
+"./Generated_Code/TickCntr1_c.obj"
+"./Generated_Code/MCUC1_c.obj"
+"./Generated_Code/Led_Red_c.obj"
+"./Generated_Code/Led_Green_c.obj"
+"./Generated_Code/IO_Map_c.obj"
+"./Generated_Code/FRTOS1_c.obj"
+"./Generated_Code/CreateTasks_c.obj"
+"./Generated_Code/Cpu_c.obj"
+"./Project_Settings/Startup_Code/startcf_c.obj"
+"./Sources/tools_c.obj"
+"./Sources/main_c.obj"
+"./Sources/frtos_tasks_c.obj"
+"./Sources/Idle_Task_c.obj"
+"./Sources/Events_c.obj"
+-sym full
+-msgstyle parseable
+-proc 51JMe
+-lavender model=ewl ,print=int ,scan=int ,io=raw
+-nostdlib
+"$(ProjDirPath)/Project_Settings/Linker_Files/ProcessorExpert.lcf"
+-m __startup
+-L"$(MCUToolsBaseDirEnv)/ColdFire_Support/ewl/lib"
+-application
+-map
+-map keep
+-srec
+-sreclength 252
+-sreceol dos
+-w on

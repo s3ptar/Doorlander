@@ -1,0 +1,7 @@
+-sym full
+-msgstyle parseable
+-proc 51JMe
+-nosyspath
+-i
+"$(ProjDirPath)/Generated_Code"
+-g

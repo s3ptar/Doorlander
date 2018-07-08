@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PE_PROJECT_SETTINGS_DOCUMENTATION>
+  <PE_product_version v="version 10.3 for Freescale Microcontrollers" />
+  <PE_core_version v="Processor Expert Version 0509" />
+  <CPU_Bean name="Cpu" type="MCF51JM128_64">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="Cpu" />
+      <CPU_type v="MCF51JM128VLH" />
+      <list name="Shared Internal properties" v="1">
+        <EmptySection_DummyValue />
+      </list>
+      <list name="Shared Clock settings" v="1">
+        <group name="Clock settings">
+          <group name="Internal clock">
+            <Internal_oscillator_frequency__kHz_ v="31.250000000000" />
+            <Internal_ref__clock_for_peripherals v="Enabled" />
+            <boolgroup name="Initialize trim value" v="yes">
+              <Trim_value_address v="1023" />
+              <Fine_trim_value_address v="1022" />
+            </boolgroup>
+          </group>
+          <boolgroup name="External clock" v="Enabled">
+            <enumgroup name="Clock source" v="External crystal">
+              <Clock_frequency__MHz_ v="12" />
+              <group name="Clock input pin">
+                <Pin_name v="PTG5_EXTAL" />
+              </group>
+              <group name="Clock output pin">
+                <Pin_name v="PTG4_XTAL" />
+              </group>
+              <Clock_range v="High frequency" />
+              <Oscillator_operating_mode v="High gain" />
+              <External_ref__clock_for_peripherals v="Enabled" />
+            </enumgroup>
+          </boolgroup>
+          <group name="Low-power modes settings">
+            <boolgroup name="STOP instruction enabled" v="yes">
+              <Power_down_control v="STOP3 - Standby mode" />
+              <Internal_clock_in_stop_mode v="Disabled" />
+              <External_clock_in_stop_mode v="Disabled" />
+            </boolgroup>
+            <boolgroup name="Force exit on interrupt" v="Enabled">
+              <Wakeup_interrupt_level v="0" />
+            </boolgroup>
+          </group>
+        </group>
+      </list>
+      <list name="Shared Internal resource mapping" v="1">
+        <group name="Internal resource mapping">
+          <group name="Exception vector table">
+            <Fetch_vectors_from_RAM v="no" />
+            <Address v="0" />
+            <Size v="1020" />
+          </group>
+        </group>
+      </list>
+      <Initialization_priority v="minimal priority" />
+      <group name="Internal peripherals">
+        <list name="Shared ADC settings" v="1">
+          <group name="ADC">
+            <Internal_bandgap_buffer v="Disabled" />
+          </group>
+        </list>
+        <list name="Shared BDM settings" v="1">
+          <group name="BDM pin support">
+            <BDM_pin v="BKGD_MS" />
+          </group>
+        </list>
+        <list name="Shared Bus clock output settings" v="1">
+          <boolgroup name="Bus clock output" v="Disabled" />
+        </list>
+        <list name="SharedCPUConfigGrp" v="1">
+          <group name="CPU configuration">
+            <Interrupt_mask v="Disabled" />
+            <Interrupt_acknowledge__IACK_ v="Disabled" />
+            <Buffered_peripheral_bus_write v="Enabled" />
+            <Flash_speculation v="Enabled" />
+          </group>
+        </list>
+        <list name="Shared FLASH settings" v="1">
+          <group name="FLASH">
+            <enumgroup name="Security state" v="Disabled">
+              <EmptySection_DummyValue />
+            </enumgroup>
+            <enumgroup name="Protection" v="Disabled">
+              <EmptySection_DummyValue />
+            </enumgroup>
+          </group>
+        </list>
+        <list name="Included IO settings" v="1">
+          <group name="I/O module">
+            <list name="Shared Unused I/O" v="1">
+              <enumgroup name="Initialize unused I/O pins" v="No initialization">
+                <EmptySection_DummyValue />
+              </enumgroup>
+            </list>
+            <list name="Shared Unbonded I/O" v="1">
+              <enumgroup name="Initialize not-bonded I/O pins" v="Output">
+                <Pull_resistor v="pull up" />
+                <Output_value v="no initialization" />
+              </enumgroup>
+            </list>
+            <group name="PORT A">
+              <Slew_rate_control_for_PTA0 v="no" />
+              <Slew_rate_control_for_PTA1 v="no" />
+              <Slew_rate_control_for_PTA2 v="no" />
+              <Slew_rate_control_for_PTA3 v="no" />
+              <Slew_rate_control_for_PTA4 v="no" />
+              <Slew_rate_control_for_PTA5 v="no" />
+              <Drive_strength_for_PTA0 v="High" />
+              <Drive_strength_for_PTA1 v="High" />
+              <Drive_strength_for_PTA2 v="High" />
+              <Drive_strength_for_PTA3 v="High" />
+              <Drive_strength_for_PTA4 v="High" />
+              <Drive_strength_for_PTA5 v="High" />
+              <Input_filter_for_PTA0 v="Disabled" />
+              <Input_filter_for_PTA1 v="Disabled" />
+              <Input_filter_for_PTA2 v="Disabled" />
+              <Input_filter_for_PTA3 v="Disabled" />
+              <Input_filter_for_PTA4 v="Disabled" />
+              <Input_filter_for_PTA5 v="Disabled" />
+            </group>
+            <group name="PORT B">
+              <Slew_rate_control_for_PTB0 v="no" />
+              <Slew_rate_control_for_PTB1 v="no" />
+              <Slew_rate_control_for_PTB2 v="no" />
+              <Slew_rate_control_for_PTB3 v="no" />
+              <Slew_rate_control_for_PTB4 v="no" />
+              <Slew_rate_control_for_PTB5 v="no" />
+              <Slew_rate_control_for_PTB6 v="no" />
+              <Slew_rate_control_for_PTB7 v="no" />
+              <Drive_strength_for_PTB0 v="High" />
+              <Drive_strength_for_PTB1 v="High" />
+              <Drive_strength_for_PTB2 v="High" />
+              <Drive_strength_for_PTB3 v="High" />
+              <Drive_strength_for_PTB4 v="High" />
+              <Drive_strength_for_PTB5 v="High" />
+              <Drive_strength_for_PTB6 v="High" />
+              <Drive_strength_for_PTB7 v="High" />
+              <Input_filter_for_PTB0 v="Disabled" />
+              <Input_filter_for_PTB1 v="Disabled" />
+              <Input_filter_for_PTB2 v="Disabled" />
+              <Input_filter_for_PTB3 v="Disabled" />
+              <Input_filter_for_PTB4 v="Disabled" />
+              <Input_filter_for_PTB5 v="Disabled" />
+              <Input_filter_for_PTB6 v="Disabled" />
+              <Input_filter_for_PTB7 v="Disabled" />
+            </group>
+            <group name="PORT C">
+              <Slew_rate_control_for_PTC0 v="no" />
+              <Slew_rate_control_for_PTC1 v="no" />
+              <Slew_rate_control_for_PTC2 v="no" />
+              <Slew_rate_control_for_PTC3 v="no" />
+              <Slew_rate_control_for_PTC4 v="no" />
+              <Slew_rate_control_for_PTC5 v="no" />
+              <Slew_rate_control_for_PTC6 v="no" />
+              <Drive_strength_for_PTC0 v="High" />
+              <Drive_strength_for_PTC1 v="High" />
+              <Drive_strength_for_PTC2 v="High" />
+              <Drive_strength_for_PTC3 v="High" />
+              <Drive_strength_for_PTC4 v="High" />
+              <Drive_strength_for_PTC5 v="High" />
+              <Drive_strength_for_PTC6 v="High" />
+              <Input_filter_for_PTC0 v="Disabled" />
+              <Input_filter_for_PTC1 v="Disabled" />
+              <Input_filter_for_PTC2 v="Disabled" />
+              <Input_filter_for_PTC3 v="Disabled" />
+              <Input_filter_for_PTC4 v="Disabled" />
+              <Input_filter_for_PTC5 v="Disabled" />
+              <Input_filter_for_PTC6 v="Disabled" />
+            </group>
+            <group name="PORT D">
+              <Slew_rate_control_for_PTD0 v="no" />
+              <Slew_rate_control_for_PTD1 v="no" />
+              <Slew_rate_control_for_PTD2 v="no" />
+              <Slew_rate_control_for_PTD3 v="no" />
+              <Slew_rate_control_for_PTD4 v="no" />
+              <Slew_rate_control_for_PTD5 v="no" />
+              <Slew_rate_control_for_PTD6 v="no" />
+              <Slew_rate_control_for_PTD7 v="no" />
+              <Drive_strength_for_PTD0 v="High" />
+              <Drive_strength_for_PTD1 v="High" />
+              <Drive_strength_for_PTD2 v="High" />
+              <Drive_strength_for_PTD3 v="High" />
+              <Drive_strength_for_PTD4 v="High" />
+              <Drive_strength_for_PTD5 v="High" />
+              <Drive_strength_for_PTD6 v="High" />
+              <Drive_strength_for_PTD7 v="High" />
+              <Input_filter_for_PTD0 v="Disabled" />
+              <Input_filter_for_PTD1 v="Disabled" />
+              <Input_filter_for_PTD2 v="Disabled" />
+              <Input_filter_for_PTD3 v="Disabled" />
+              <Input_filter_for_PTD4 v="Disabled" />
+              <Input_filter_for_PTD5 v="Disabled" />
+              <Input_filter_for_PTD6 v="Disabled" />
+              <Input_filter_for_PTD7 v="Disabled" />
+            </group>
+            <group name="PORT E">
+              <Slew_rate_control_for_PTE0 v="no" />
+              <Slew_rate_control_for_PTE1 v="no" />
+              <Slew_rate_control_for_PTE2 v="no" />
+              <Slew_rate_control_for_PTE3 v="no" />
+              <Slew_rate_control_for_PTE4 v="no" />
+              <Slew_rate_control_for_PTE5 v="no" />
+              <Slew_rate_control_for_PTE6 v="no" />
+              <Slew_rate_control_for_PTE7 v="no" />
+              <Drive_strength_for_PTE0 v="High" />
+              <Drive_strength_for_PTE1 v="High" />
+              <Drive_strength_for_PTE2 v="High" />
+              <Drive_strength_for_PTE3 v="High" />
+              <Drive_strength_for_PTE4 v="High" />
+              <Drive_strength_for_PTE5 v="High" />
+              <Drive_strength_for_PTE6 v="High" />
+              <Drive_strength_for_PTE7 v="High" />
+              <Input_filter_for_PTE0 v="Disabled" />
+              <Input_filter_for_PTE1 v="Disabled" />
+              <Input_filter_for_PTE2 v="Disabled" />
+              <Input_filter_for_PTE3 v="Disabled" />
+              <Input_filter_for_PTE4 v="Disabled" />
+              <Input_filter_for_PTE5 v="Disabled" />
+              <Input_filter_for_PTE6 v="Disabled" />
+              <Input_filter_for_PTE7 v="Disabled" />
+            </group>
+            <group name="PORT F">
+              <Slew_rate_control_for_PTF0 v="no" />
+              <Slew_rate_control_for_PTF1 v="no" />
+              <Slew_rate_control_for_PTF2 v="no" />
+              <Slew_rate_control_for_PTF3 v="no" />
+              <Slew_rate_control_for_PTF4 v="no" />
+              <Slew_rate_control_for_PTF5 v="no" />
+              <Slew_rate_control_for_PTF6 v="no" />
+              <Slew_rate_control_for_PTF7 v="no" />
+              <Drive_strength_for_PTF0 v="High" />
+              <Drive_strength_for_PTF1 v="High" />
+              <Drive_strength_for_PTF2 v="High" />
+              <Drive_strength_for_PTF3 v="High" />
+              <Drive_strength_for_PTF4 v="High" />
+              <Drive_strength_for_PTF5 v="High" />
+              <Drive_strength_for_PTF6 v="High" />
+              <Drive_strength_for_PTF7 v="High" />
+              <Input_filter_for_PTF0 v="Disabled" />
+              <Input_filter_for_PTF1 v="Disabled" />
+              <Input_filter_for_PTF2 v="Disabled" />
+              <Input_filter_for_PTF3 v="Disabled" />
+              <Input_filter_for_PTF4 v="Disabled" />
+              <Input_filter_for_PTF5 v="Disabled" />
+              <Input_filter_for_PTF6 v="Disabled" />
+              <Input_filter_for_PTF7 v="Disabled" />
+            </group>
+            <group name="PORT G">
+              <Slew_rate_control_for_PTG0 v="no" />
+              <Slew_rate_control_for_PTG1 v="no" />
+              <Slew_rate_control_for_PTG2 v="no" />
+              <Slew_rate_control_for_PTG3 v="no" />
+              <Slew_rate_control_for_PTG4 v="no" />
+              <Slew_rate_control_for_PTG5 v="no" />
+              <Drive_strength_for_PTG0 v="High" />
+              <Drive_strength_for_PTG1 v="High" />
+              <Drive_strength_for_PTG2 v="High" />
+              <Drive_strength_for_PTG3 v="High" />
+              <Drive_strength_for_PTG4 v="High" />
+              <Drive_strength_for_PTG5 v="High" />
+              <Input_filter_for_PTG0 v="Disabled" />
+              <Input_filter_for_PTG1 v="Disabled" />
+              <Input_filter_for_PTG2 v="Disabled" />
+              <Input_filter_for_PTG3 v="Disabled" />
+              <Input_filter_for_PTG4 v="Disabled" />
+              <Input_filter_for_PTG5 v="Disabled" />
+            </group>
+          </group>
+        </list>
+        <list name="SharedClockGatingGrp" v="1">
+          <group name="System Clock Gating">
+            <SCI1_Clock_Gate v="Enabled" />
+            <SCI2_Clock_Gate v="Enabled" />
+            <IIC1_Clock_Gate v="Enabled" />
+            <IIC2_Clock_Gate v="Enabled" />
+            <ADC_Clock_Gate v="Enabled" />
+            <TPM1_Clock_Gate v="Enabled" />
+            <TPM2_Clock_Gate v="Enabled" />
+            <CMT_Clock_Gate v="Enabled" />
+            <SPI1_Clock_Gate v="Enabled" />
+            <SPI2_Clock_Gate v="Enabled" />
+            <RTC_Clock_Gate v="Enabled" />
+            <ACMP_Clock_Gate v="Enabled" />
+            <KBI_Clock_Gate v="Enabled" />
+            <IRQ_Clock_Gate v="Enabled" />
+            <FLASH_Register_Clock_Gate v="Enabled" />
+            <USB_Clock_Gate v="Enabled" />
+            <RNGA_Clock_Gate v="Enabled" />
+          </group>
+        </list>
+        <list name="Shared LVD settings" v="1">
+          <boolgroup name="LVD module" v="Enabled">
+            <LVD_reset v="Enabled" />
+            <boolgroup name="LVW interrupt" v="Disabled" />
+            <Enable_in_stop_mode v="yes" />
+            <Low_voltage_detect_voltage v="Low trip point" />
+            <Low_voltage_warning_voltage v="Low trip point" />
+          </boolgroup>
+        </list>
+        <list name="Shared TMP modules setting" v="1">
+          <EmptySection_DummyValue />
+        </list>
+        <list name="Shared Reset pin setting" v="1">
+          <group name="Reset pin ">
+            <Reset_pin v="RESET" />
+          </group>
+        </list>
+      </group>
+      <list name="Shared CPU interrupts/resets" v="1">
+        <group name="CPU interrupts/resets">
+          <group name="Instruction related exceptions">
+            <Instruction_related_reset v="Enabled" />
+            <boolgroup name="Illegal Instruction Exception" v="Disabled" />
+            <boolgroup name="Unimplemented Line-A Opcode" v="Disabled" />
+            <boolgroup name="Unimplemented Line-F Opcode" v="Disabled" />
+            <boolgroup name="Privilege Violation" v="Disabled" />
+          </group>
+          <group name="Address related exceptions">
+            <Address_related_reset v="Enabled" />
+            <boolgroup name="Access Error Exception" v="Disabled" />
+            <boolgroup name="Address Error Exception" v="Disabled" />
+            <boolgroup name="RTE Format Error Exception" v="Disabled" />
+          </group>
+          <boolgroup name="Unsupported Instruction" v="Disabled" />
+          <list name="Trap exceptions" v="16">
+            <boolgroup name="Trap 0" v="Disabled" />
+            <boolgroup name="Trap 1" v="Disabled" />
+            <boolgroup name="Trap 2" v="Disabled" />
+            <boolgroup name="Trap 3" v="Disabled" />
+            <boolgroup name="Trap 4" v="Disabled" />
+            <boolgroup name="Trap 5" v="Disabled" />
+            <boolgroup name="Trap 6" v="Disabled" />
+            <boolgroup name="Trap 7" v="Disabled" />
+            <boolgroup name="Trap 8" v="Disabled" />
+            <boolgroup name="Trap 9" v="Disabled" />
+            <boolgroup name="Trap 10" v="Disabled" />
+            <boolgroup name="Trap 11" v="Disabled" />
+            <boolgroup name="Trap 12" v="Disabled" />
+            <boolgroup name="Trap 13" v="Disabled" />
+            <boolgroup name="Trap 14" v="Disabled" />
+            <boolgroup name="Trap 15" v="Disabled" />
+          </list>
+          <list name="Software Interrupts" v="7">
+            <boolgroup name="Software Interrupt Level 1" v="Disabled" />
+            <boolgroup name="Software Interrupt Level 2" v="Disabled" />
+            <boolgroup name="Software Interrupt Level 3" v="Disabled" />
+            <boolgroup name="Software Interrupt Level 4" v="Disabled" />
+            <boolgroup name="Software Interrupt Level 5" v="Disabled" />
+            <boolgroup name="Software Interrupt Level 6" v="Disabled" />
+            <boolgroup name="Software Interrupt Level 7" v="Disabled" />
+          </list>
+          <boolgroup name="Loss of lock" v="Disabled" />
+        </group>
+      </list>
+      <list name="Shared MCG speed mode settings" v="1">
+        <group name="Enabled speed modes">
+          <boolgroup name="High speed mode" v="Enabled">
+            <High_speed_clock v="Internal Clock" />
+            <Bus_freq__divider v="Auto select" />
+            <Internal_bus_clock v="4.194304000000" />
+            <Fixed_frequency_clock__MHz_ v="0.016384" />
+            <Clock_monitor v="Disabled" />
+            <enumgroup name="FLL/PLL mode" v="FLL Engaged">
+              <Loss_of_lock_interrupt v="Disabled" />
+              <enumgroup name="Ref. clock source" v="Internal Clock">
+                <Ref__clock_freq___MHz_ v="0.032768000000" />
+              </enumgroup>
+              <enumgroup name="DCO mode" v="Auto select">
+                <EmptySection_DummyValue />
+              </enumgroup>
+              <FLL_output_clock_freq___MHz_ v="16.777216000000" />
+            </enumgroup>
+          </boolgroup>
+          <boolgroup name="Low speed mode" v="Disabled" />
+          <boolgroup name="Slow speed mode" v="Disabled" />
+        </group>
+      </list>
+    </Properties>
+    <Methods>
+      <list name="SharedCpuMethods" v="1">
+        <SetHighSpeed v="don&amp;apos;t generate code" />
+        <SetLowSpeed v="don&amp;apos;t generate code" />
+        <SetSlowSpeed v="don&amp;apos;t generate code" />
+        <GetSpeedMode v="don&amp;apos;t generate code" />
+        <EnableInt v="generate code" />
+        <DisableInt v="generate code" />
+        <SetILM v="don&amp;apos;t generate code" />
+        <GetResetSource v="don&amp;apos;t generate code" />
+        <SetWaitMode v="don&amp;apos;t generate code" />
+        <SetStopMode v="don&amp;apos;t generate code" />
+        <GetLowVoltageWarningFlag v="don&amp;apos;t generate code" />
+        <ClearLowVoltageWarningFlag v="don&amp;apos;t generate code" />
+        <GetPartialPowerDownFlag v="don&amp;apos;t generate code" />
+        <ClearPartialPowerDownFlag v="don&amp;apos;t generate code" />
+        <GetIdentification v="don&amp;apos;t generate code" />
+        <SetBackdoorKey v="don&amp;apos;t generate code" />
+        <Delay100US v="don&amp;apos;t generate code" />
+      </list>
+    </Methods>
+    <Events>
+      <Event_module_name v="Events" />
+      <list name="ColdFireV1EvntGrp" v="1">
+        <event name="OnAddrRelatedEXP" v="don&amp;apos;t generate code" />
+        <event name="OnInstrRelatedEXP" v="don&amp;apos;t generate code" />
+        <event name="OnTrapEXP" v="don&amp;apos;t generate code" />
+        <event name="OnUnsupportedInstEXP" v="don&amp;apos;t generate code" />
+        <event name="OnSwINT" v="don&amp;apos;t generate code" />
+      </list>
+      <list name="CommonEventsGrp" v="1">
+        <event name="OnReset" v="don&amp;apos;t generate code" />
+        <event name="OnLvwINT" v="don&amp;apos;t generate code" />
+        <event name="OnLossOfLockINT" v="don&amp;apos;t generate code" />
+      </list>
+    </Events>
+    <Compiler v="CodeWarrior ColdFireV1 C Compiler" />
+    <CompilerProperties>
+      <Compiler v="CodeWarrior ColdFireV1 C Compiler" />
+      <enumgroup name="Unhandled vectors" v="One handler for all">
+        <Unhandled_int_code>
+          <StrgList><![CDATA[/* This code can be changed using the CPU component property "Build Options / Unhandled int code" */
+/* asm (HALT) */
+]]></StrgList>
+        </Unhandled_int_code>
+      </enumgroup>
+      <Generate_macros v="yes" />
+      <FLASH_registers_initialization v="Enabled" />
+      <group name="User initialization">
+        <User_data_declarations>
+          <StrgList></StrgList>
+        </User_data_declarations>
+        <User_code_before_PE_initialization>
+          <StrgList></StrgList>
+        </User_code_before_PE_initialization>
+        <User_code_after_PE_initialization>
+          <StrgList></StrgList>
+        </User_code_after_PE_initialization>
+      </group>
+      <boolgroup name="Generate LCF file" v="yes">
+        <Stack_size v="1024" />
+        <Heap_size v="1024" />
+        <group name="Memory segments">
+          <Set_default_memory_segments v="Click to set default &amp;gt;" />
+          <list name="ROM/RAM segments" v="2">
+            <boolgroup name="Segment0" v="Enabled">
+              <Name v="code" />
+              <group name="Access permissions">
+                <Read v="yes" />
+                <Write v="no" />
+                <Execute v="yes" />
+              </group>
+              <Address v="1040" />
+              <Size v="130032" />
+            </boolgroup>
+            <boolgroup name="Segment1" v="Enabled">
+              <Name v="userram" />
+              <group name="Access permissions">
+                <Read v="yes" />
+                <Write v="yes" />
+                <Execute v="yes" />
+              </group>
+              <Address v="8388608" />
+              <Size v="16384" />
+            </boolgroup>
+          </list>
+        </group>
+      </boolgroup>
+    </CompilerProperties>
+  </CPU_Bean>
+  <Bean name="FRTOS1" type="FreeRTOS">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="FRTOS1" />
+      <RTOS_Version v="V10.0.1" />
+      <SDK v="MCUC1" />
+      <boolgroup name="Kinetis SDK" v="Disabled" />
+      <group name="Custom Port">
+        <Compiler v="automatic" />
+        <boolgroup name="Source Folders" v="Disabled" />
+        <boolgroup name="Custom portBASE_TYPE" v="Disabled" />
+      </group>
+      <Classic_CodeWarrior v="no" />
+      <Disabled_Interrupts_in_Startup v="yes" />
+      <configASSERT v="yes" />
+      <Application_Task_Tags v="no" />
+      <Thread_Local_Storage_Pointers v="0" />
+      <Use_Trace_Facility v="no" />
+      <group name="Debug Helpers">
+        <Enable_GDB_Debug_Helper v="no" />
+        <Enable_LinkTimeOptimizer_Helper v="no" />
+        <uxTopUsedPriority v="no" />
+        <Heap_Indication_Constant v="no" />
+        <Task_C_Additions v="yes" />
+        <Record_Stack_High_Address v="yes" />
+      </group>
+      <boolgroup name="Segger System Viewer Trace" v="Disabled" />
+      <boolgroup name="Percepio Trace" v="Disabled" />
+      <boolgroup name="Generate Runtime Statistics" v="Disabled" />
+      <group name="Scheduler">
+        <boolgroup name="ColdFire V1" v="Enabled">
+          <CPU v="MCF51JM" />
+          <SWI v="VL1swi" />
+        </boolgroup>
+        <boolgroup name="ColdFire V2" v="Disabled" />
+        <boolgroup name="ARM Cortex-M" v="Disabled" />
+        <boolgroup name="non-LDD SWI" v="Enabled">
+          <inhrbean type="InterruptVector">
+            <Enabled v="Y" />
+            <Template v="SWI" />
+            <Properties>
+              <Component_name v="VL1swi" />
+              <Interrupt_vector v="VL1swi" />
+              <Interrupt_priority v="medium priority" />
+              <boolgroup name="Shared interrupt" v="no" />
+              <ISR_name v="vPortYieldISR" />
+              <Allow_duplicate_ISR_names v="no" />
+            </Properties>
+            <Methods>
+              <EmptySection_DummyValue />
+            </Methods>
+            <Events>
+              <EmptySection_DummyValue />
+            </Events>
+          </inhrbean>
+        </boolgroup>
+        <Preemptive v="yes" />
+        <Optimized_Task_Selection v="yes" />
+        <Time_Slicing v="yes" />
+        <Use_Co_Routines v="no" />
+        <Idle_should_yield v="yes" />
+        <Task_Name_Length v="12" />
+        <Minimal_Stack_Size v="200" />
+        <Maximum_Priorities v="6" />
+        <Maximum_Coroutine_Priorities v="2" />
+        <Stackoverflow_checking_method v="Method 1" />
+        <Cleanup_Resources v="yes" />
+        <TaskExitError_Handler v="no" />
+      </group>
+      <group name="Ticks">
+        <boolgroup name="Tickless Idle Mode" v="Disabled" />
+        <Tick_Rate__Hz_ v="100" />
+        <Use_16bit_ticks v="no" />
+        <boolgroup name="non-LDD Tick" v="Enabled">
+          <inhrbean type="FreeCntr">
+            <Enabled v="Y" />
+            <Template v="TickCntr" />
+            <Properties>
+              <Component_name v="TickCntr1" />
+              <Device v="RTCmod" />
+              <Counter v="RTC" />
+              <boolgroup name="Interrupt service/event" v="Enabled">
+                <Interrupt v="Vrtc" />
+                <Interrupt_priority v="medium priority" />
+              </boolgroup>
+              <Period_offset v="10 ms" />
+              <Reset_counter_on_compare v="yes" />
+              <Same_period_in_modes v="yes" />
+              <Component_uses_entire_timer v="yes" />
+              <group name="Initialization">
+                <Enabled_in_init__code v="no" />
+                <Events_enabled_in_init_ v="yes" />
+              </group>
+              <group name="CPU clock/speed selection">
+                <High_speed_mode v="This component enabled" />
+                <Low_speed_mode v="This component disabled" />
+                <Slow_speed_mode v="This component disabled" />
+              </group>
+            </Properties>
+            <Methods>
+              <Enable v="generate code" />
+              <Disable v="generate code" />
+              <EnableEvent v="don&amp;apos;t generate code" />
+              <DisableEvent v="don&amp;apos;t generate code" />
+              <Reset v="generate code" />
+              <GetCounterValue v="generate code" />
+              <SetCompare v="generate code" />
+              <GetStatus v="don&amp;apos;t generate code" />
+            </Methods>
+            <Events>
+              <Event_module_name v="Events" />
+              <event name="BeforeNewSpeed" v="don&amp;apos;t generate code" />
+              <event name="AfterNewSpeed" v="don&amp;apos;t generate code" />
+              <event name="OnInterrupt" v="generate code">
+                <Event_procedure_name v="TickCntr1_OnInterrupt" />
+                <Priority v="same as interrupt" />
+              </event>
+            </Events>
+          </inhrbean>
+        </boolgroup>
+        <boolgroup name="LDD Tick" v="Disabled" />
+      </group>
+      <group name="Queues">
+        <Queue_Registry_Size v="5" />
+        <Queue_Sets v="no" />
+      </group>
+      <group name="Semaphores and Mutexes">
+        <Use_Mutexes v="yes" />
+        <Use_Recursive_Mutexes v="yes" />
+      </group>
+      <boolgroup name="Timers" v="Disabled" />
+      <group name="Memory">
+        <boolgroup name="Dynamic Allocation" v="Enabled">
+          <Application_allocated_Heap v="no" />
+          <Heap_Size v="4096" />
+          <Linker_Heap_Base_Symbol v="__HeapBase" />
+          <Linker_Heap_Limit_Symbol v="__HeapLimit" />
+          <Linker_Heap_Size_Symbol v="__heap_size" />
+          <Memory_Allocation_Scheme v="Scheme 4: merge free blocks" />
+        </boolgroup>
+        <boolgroup name="Static Allocation" v="Disabled" />
+        <boolgroup name="User Memory Section" v="Disabled" />
+      </group>
+      <group name="RTOS Adaptor">
+        <group name="Memory allocation">
+          <boolgroup name="User function for memory allocation" v="no" />
+          <boolgroup name="User function for memory deallocation" v="no" />
+        </group>
+        <group name="Critical section">
+          <boolgroup name="User function for entering critical section" v="no" />
+          <boolgroup name="User function for exiting critical section" v="no" />
+        </group>
+      </group>
+      <boolgroup name="Shell" v="Disabled" />
+      <Utility v="UTIL1" />
+    </Properties>
+    <Methods>
+      <xTaskCreate v="generate code" />
+      <xTaskCreateStatic v="generate code" />
+      <vTaskDelete v="don&amp;apos;t generate code" />
+      <vTaskStartScheduler v="generate code" />
+      <vTaskEndScheduler v="don&amp;apos;t generate code" />
+      <vTaskSuspend v="generate code" />
+      <vTaskSuspendAll v="generate code" />
+      <vTaskResume v="generate code" />
+      <xTaskResumeAll v="generate code" />
+      <xTaskResumeFromISR v="generate code" />
+      <vTaskStepTick v="don&amp;apos;t generate code" />
+      <xTaskAbortDelay v="don&amp;apos;t generate code" />
+      <taskYIELD v="generate code" />
+      <taskENTER_CRITICAL v="generate code" />
+      <taskEXIT_CRITICAL v="generate code" />
+      <taskDISABLE_INTERRUPTS v="generate code" />
+      <taskENABLE_INTERRUPTS v="generate code" />
+      <vTaskDelay v="generate code" />
+      <vTaskDelayUntil v="generate code" />
+      <uxTaskPriorityGet v="generate code" />
+      <xTaskGetTickCount v="generate code" />
+      <xTaskGetTickCountFromISR v="generate code" />
+      <vTaskPrioritySet v="generate code" />
+      <xSemaphoreCreateBinary v="generate code" />
+      <xSemaphoreCreateBinaryStatic v="generate code" />
+      <xSemaphoreCreateCounting v="generate code" />
+      <xSemaphoreCreateCountingStatic v="generate code" />
+      <xSemaphoreGive v="generate code" />
+      <xSemaphoreTake v="generate code" />
+      <uxSemaphoreGetCount v="generate code" />
+      <xSemaphoreGiveFromISR v="generate code" />
+      <xSemaphoreTakeFromISR v="generate code" />
+      <xSemaphoreGetMutexHolder v="generate code" />
+      <xSemaphoreCreateMutex v="generate code" />
+      <xSemaphoreCreateMutexStatic v="generate code" />
+      <xSemaphoreCreateRecursiveMutex v="generate code" />
+      <xSemaphoreCreateRecursiveMutexStatic v="generate code" />
+      <xSemaphoreTakeRecursive v="generate code" />
+      <xSemaphoreGiveRecursive v="generate code" />
+      <vSemaphoreDelete v="generate code" />
+      <pvPortMalloc v="generate code" />
+      <vPortFree v="generate code" />
+      <xPortGetFreeHeapSize v="generate code" />
+      <vTaskSetApplicationTaskTag v="don&amp;apos;t generate code" />
+      <xTaskGetApplicationTaskTag v="don&amp;apos;t generate code" />
+      <xTaskCallApplicationTaskHook v="don&amp;apos;t generate code" />
+      <xTaskGetCurrentTaskHandle v="generate code" />
+      <xTaskGetIdleTaskHandle v="generate code" />
+      <xTaskGetHandle v="generate code" />
+      <pcTaskGetTaskName v="generate code" />
+      <eTaskGetState v="don&amp;apos;t generate code" />
+      <xTaskGetSchedulerState v="generate code" />
+      <vTaskList v="don&amp;apos;t generate code" />
+      <uxTaskGetStackHighWaterMark v="generate code" />
+      <uxTaskGetNumberOfTasks v="generate code" />
+      <vTaskGetRunTimeStats v="don&amp;apos;t generate code" />
+      <uxQueueMessagesWaiting v="generate code" />
+      <uxQueueMessagesWaitingfromISR v="generate code" />
+      <xQueueCreate v="generate code" />
+      <xQueueCreateStatic v="generate code" />
+      <vQueueDelete v="generate code" />
+      <xQueueReset v="generate code" />
+      <xQueueSendToBack v="generate code" />
+      <xQueueSendToFront v="generate code" />
+      <xQueueReceive v="generate code" />
+      <xQueueOverwrite v="generate code" />
+      <xQueueOverwriteFromISR v="generate code" />
+      <xQueuePeek v="generate code" />
+      <xQueuePeekFromISR v="generate code" />
+      <xQueueSendToBackFromISR v="generate code" />
+      <xQueueSendToFrontFromISR v="generate code" />
+      <xQueueReceiveFromISR v="generate code" />
+      <vQueueAddToRegistry v="generate code" />
+      <vQueueUnregisterQueue v="generate code" />
+      <xQueueIsQueueFullFromISR v="generate code" />
+      <xQueueIsQueueEmptyFromISR v="generate code" />
+      <xQueueCreateSet v="don&amp;apos;t generate code" />
+      <xQueueAddToSet v="don&amp;apos;t generate code" />
+      <xQueueRemoveFromSet v="don&amp;apos;t generate code" />
+      <xQueueSelectFromSet v="don&amp;apos;t generate code" />
+      <xQueueSelectFromSetFromISR v="don&amp;apos;t generate code" />
+      <xEventGroupCreate v="generate code" />
+      <xEventGroupCreateStatic v="generate code" />
+      <xEventGroupWaitBits v="generate code" />
+      <xEventGroupSetBits v="generate code" />
+      <xEventGroupSetBitsFromISR v="generate code" />
+      <xEventGroupClearBits v="generate code" />
+      <xEventGroupClearBitsFromISR v="generate code" />
+      <xEventGroupGetBits v="generate code" />
+      <xEventGroupGetBitsFromISR v="generate code" />
+      <xEventGroupSync v="generate code" />
+      <xTimerCreate v="generate code" />
+      <xTimerCreateStatic v="don&amp;apos;t generate code" />
+      <xTimerIsTimerActive v="generate code" />
+      <xTimerStart v="generate code" />
+      <xTimerStop v="generate code" />
+      <xTimerChangePeriod v="generate code" />
+      <xTimerDelete v="generate code" />
+      <xTimerReset v="generate code" />
+      <xTimerStartFromISR v="generate code" />
+      <xTimerStopFromISR v="generate code" />
+      <xTimerChangePeriodFromISR v="generate code" />
+      <xTimerResetFromISR v="generate code" />
+      <pvTimerGetTimerID v="generate code" />
+      <xTimerGetTimerDaemonTaskHandle v="generate code" />
+      <pcTimerGetTimerName v="generate code" />
+      <xTimerPendFunctionCall v="generate code" />
+      <xTimerPendFunctionCallFromISR v="generate code" />
+      <xTaskNotifyGive v="generate code" />
+      <vTaskNotifyGiveFromISR v="generate code" />
+      <ulTaskNotifyTake v="generate code" />
+      <xTaskNotify v="generate code" />
+      <xTaskNotifyFromISR v="generate code" />
+      <xTaskNotifyAndQuery v="generate code" />
+      <xTaskNotifyAndQueryFromISR v="generate code" />
+      <xTaskNotifyWait v="generate code" />
+      <xTaskNotifyStateClear v="generate code" />
+      <vTaskSetThreadLocalStoragePointer v="generate code" />
+      <pvTaskGetThreadLocalStoragePointer v="generate code" />
+      <pcTaskGetName v="generate code" />
+      <vTaskGetInfo v="generate code" />
+      <ParseCommand v="don&amp;apos;t generate code" />
+      <AppConfigureTimerForRuntimeStats v="generate code" />
+      <AppGetRuntimeCounterValueFromISR v="generate code" />
+      <Deinit v="generate code" />
+      <Init v="generate code" />
+    </Methods>
+    <Events>
+      <Event_module_name v="Events" />
+      <event name="vApplicationStackOverflowHook" v="generate code">
+        <Event_procedure_name v="FRTOS1_vApplicationStackOverflowHook" />
+      </event>
+      <event name="vApplicationTickHook" v="generate code">
+        <Event_procedure_name v="FRTOS1_vApplicationTickHook" />
+      </event>
+      <event name="vApplicationIdleHook" v="generate code">
+        <Event_procedure_name v="FRTOS1_vApplicationIdleHook" />
+      </event>
+      <event name="vApplicationMallocFailedHook" v="generate code">
+        <Event_procedure_name v="FRTOS1_vApplicationMallocFailedHook" />
+      </event>
+      <event name="vOnPreSleepProcessing" v="don&amp;apos;t generate code" />
+      <event name="vOnPostSleepProcessing" v="don&amp;apos;t generate code" />
+    </Events>
+  </Bean>
+  <Bean name="MCUC1" type="McuLibConfig">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="MCUC1" />
+      <SDK v="Processor Expert" />
+      <Config_Files_Folder v="" />
+    </Properties>
+    <Methods>
+      <Init v="generate code" />
+      <Deinit v="generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="UTIL1" type="Utility">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="UTIL1" />
+      <SDK v="MCUC1" />
+    </Properties>
+    <Methods>
+      <strcpy v="generate code" />
+      <strcat v="generate code" />
+      <strcatPad v="generate code" />
+      <chcat v="generate code" />
+      <Num8sToStr v="generate code" />
+      <Num8uToStr v="generate code" />
+      <Num16sToStr v="generate code" />
+      <Num16uToStr v="generate code" />
+      <Num32uToStr v="generate code" />
+      <Num32sToStr v="generate code" />
+      <NumFloatToStr v="generate code" />
+      <Num16sToStrFormatted v="generate code" />
+      <Num16uToStrFormatted v="generate code" />
+      <Num32uToStrFormatted v="generate code" />
+      <Num32sToStrFormatted v="generate code" />
+      <strcatNum8u v="generate code" />
+      <strcatNum8s v="generate code" />
+      <strcatNum16u v="generate code" />
+      <strcatNum16s v="generate code" />
+      <strcatNum32u v="generate code" />
+      <strcatNum32s v="generate code" />
+      <strcatNum16uFormatted v="generate code" />
+      <strcatNum16sFormatted v="generate code" />
+      <strcatNum32uFormatted v="generate code" />
+      <strcatNum32sFormatted v="generate code" />
+      <strcatNum8Hex v="generate code" />
+      <strcatNum16Hex v="generate code" />
+      <strcatNum24Hex v="generate code" />
+      <strcatNum32Hex v="generate code" />
+      <strcatNum32sDotValue100 v="generate code" />
+      <strcatNumFloat v="generate code" />
+      <IsLeapYear v="generate code" />
+      <WeekDay v="generate code" />
+      <ReadEscapedName v="generate code" />
+      <xatoi v="generate code" />
+      <ScanDate v="generate code" />
+      <ScanTime v="generate code" />
+      <ScanDecimal8uNumber v="generate code" />
+      <ScanDecimal8sNumber v="generate code" />
+      <ScanDecimal16uNumber v="generate code" />
+      <ScanDecimal16sNumber v="generate code" />
+      <ScanDecimal32uNumber v="generate code" />
+      <ScanDecimal32sNumber v="generate code" />
+      <ScanDecimal32sDotNumber v="generate code" />
+      <ScanHex8uNumber v="generate code" />
+      <ScanHex8uNumberNoPrefix v="generate code" />
+      <ScanHex16uNumber v="generate code" />
+      <ScanHex32uNumber v="generate code" />
+      <ScanSeparatedNumbers v="generate code" />
+      <ScanDoubleQuotedString v="generate code" />
+      <strcmp v="generate code" />
+      <strncmp v="generate code" />
+      <strFind v="generate code" />
+      <strtailcmp v="generate code" />
+      <strlen v="generate code" />
+      <strCutTail v="generate code" />
+      <GetValue16LE v="generate code" />
+      <GetValue24LE v="generate code" />
+      <GetValue32LE v="generate code" />
+      <SetValue16LE v="generate code" />
+      <SetValue24LE v="generate code" />
+      <SetValue32LE v="generate code" />
+      <map v="generate code" />
+      <map64 v="generate code" />
+      <constrain v="generate code" />
+      <random v="generate code" />
+      <randomSetSeed v="generate code" />
+      <Deinit v="generate code" />
+      <Init v="generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="Led_Red" type="BitIO">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="Led_Red" />
+      <Pin_for_I_O v="PTF0_TPM1CH2" />
+      <Pull_resistor sel_value="no pull resistor">
+        
+autoselected pull
+
+        <EmptySection_DummyValue />
+      </Pull_resistor>
+      <Open_drain v="push-pull" />
+      <Slew_rate_control_for_PTF0 v="no" />
+      <Drive_strength_for_PTF0 v="High" />
+      <Input_filter_for_PTF0 v="Disabled" />
+      <Direction v="Output" />
+      <group name="Initialization">
+        <Init__direction v="Output" />
+        <Init__value v="1" />
+      </group>
+      <Safe_mode v="yes" />
+      <Optimization_for v="speed" />
+    </Properties>
+    <Methods>
+      <GetDir v="don&amp;apos;t generate code" />
+      <SetDir v="don&amp;apos;t generate code" />
+      <SetInput v="don&amp;apos;t generate code" />
+      <SetOutput v="don&amp;apos;t generate code" />
+      <GetVal v="generate code" />
+      <PutVal v="generate code" />
+      <ClrVal v="generate code" />
+      <SetVal v="generate code" />
+      <NegVal v="don&amp;apos;t generate code" />
+      <GetRawVal v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="Led_Green" type="BitIO">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="Led_Green" />
+      <Pin_for_I_O v="PTF1_TPM1CH3" />
+      <Pull_resistor sel_value="no pull resistor">
+        
+autoselected pull
+
+        <EmptySection_DummyValue />
+      </Pull_resistor>
+      <Open_drain v="push-pull" />
+      <Slew_rate_control_for_PTF1 v="no" />
+      <Drive_strength_for_PTF1 v="High" />
+      <Input_filter_for_PTF1 v="Disabled" />
+      <Direction v="Output" />
+      <group name="Initialization">
+        <Init__direction v="Output" />
+        <Init__value v="1" />
+      </group>
+      <Safe_mode v="yes" />
+      <Optimization_for v="speed" />
+    </Properties>
+    <Methods>
+      <GetDir v="don&amp;apos;t generate code" />
+      <SetDir v="don&amp;apos;t generate code" />
+      <SetInput v="don&amp;apos;t generate code" />
+      <SetOutput v="don&amp;apos;t generate code" />
+      <GetVal v="generate code" />
+      <PutVal v="generate code" />
+      <ClrVal v="generate code" />
+      <SetVal v="generate code" />
+      <NegVal v="generate code" />
+      <GetRawVal v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="CreateTasks" type="FreeRTOS_Tasks">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_Name v="CreateTasks" />
+      <FreeRTOS v="FRTOS1" />
+      <list name="Number of tasks" v="1">
+        <group name="FreeRTOS task">
+          <Task_name v="Idle" />
+          <Stack_size__plus_configMINIMAL_STACK_SIZE_ v="0" />
+          <Initial_Priority v="0" />
+        </group>
+      </list>
+    </Properties>
+    <Methods>
+      <CreateTasks v="generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+</PE_PROJECT_SETTINGS_DOCUMENTATION>
+

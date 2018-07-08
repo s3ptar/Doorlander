@@ -1,0 +1,181 @@
+
+
+
+# .abs__InterruptVectorTable
+  00000000 000001BC .abs    InterruptVectorTable	(Vectors_c.obj)
+
+# .abs_NVPROT_INIT
+  0000040D 00000001 .abs    NVPROT_INIT	(Cpu_c.obj)
+
+# .abs_NVOPT_INIT
+  0000040F 00000001 .abs    NVOPT_INIT	(Cpu_c.obj)
+#>00000400          ___heap_size (linker command file)
+#>00000400          ___stack_size (linker command file)
+#>00800000          ___RAM_ADDRESS (linker command file)
+#>00004000          ___RAM_SIZE (linker command file)
+#>00000000          ___FLASH_ADDRESS (linker command file)
+#>00020000          ___FLASH_SIZE (linker command file)
+
+# .userram
+
+# .code
+
+# .text
+  00000410 000000C6 .text   xTaskCreate	(tasks_c.obj)
+  000004D6 00000164 .text   prvInitialiseNewTask	(tasks_c.obj)
+  0000063A 000000B4 .text   prvAddNewTaskToReadyList	(tasks_c.obj)
+  000006EE 000000B2 .text   vTaskDelayUntil	(tasks_c.obj)
+  000007A0 0000005A .text   vTaskStartScheduler	(tasks_c.obj)
+  000007FA 0000000C .text   vTaskSuspendAll	(tasks_c.obj)
+  00000806 0000011E .text   xTaskResumeAll	(tasks_c.obj)
+  00000924 00000016 .text   xTaskGetTickCount	(tasks_c.obj)
+  0000093A 0000016C .text   xTaskIncrementTick	(tasks_c.obj)
+  00000AA6 000000C2 .text   vTaskSwitchContext	(tasks_c.obj)
+  00000B68 00000026 .text   prvIdleTask	(tasks_c.obj)
+  00000B8E 0000005C .text   prvInitialiseTaskLists	(tasks_c.obj)
+  00000BEA 00000002 .text   prvCheckTasksWaitingTermination	(tasks_c.obj)
+  00000BEC 00000036 .text   prvResetNextTaskUnblockTime	(tasks_c.obj)
+  00000C22 0000009C .text   prvAddCurrentTaskToDelayedList	(tasks_c.obj)
+  00000CC0 00000000 .text   ulPortSetIPL	(portasm_s.obj)
+  00000CC0 0000007C .text   @DummyFn1	(portasm_s.obj)
+  00000CC0 0000007C .text   .text	(portasm_s.obj)
+  00000CC0 00000000 .text   ulPortSetIPL	(portasm_s.obj)
+  00000CF4 00000000 .text   mcf5xxx_wr_cacrx	(portasm_s.obj)
+  00000CF4 00000000 .text   mcf5xxx_wr_cacrx	(portasm_s.obj)
+  00000D00 00000000 .text   vPortYieldISR	(portasm_s.obj)
+  00000D00 00000000 .text   vPortYieldISR	(portasm_s.obj)
+  00000D28 00000000 .text   vPortStartFirstTask	(portasm_s.obj)
+  00000D28 00000000 .text   vPortStartFirstTask	(portasm_s.obj)
+  00000D3C 00000066 .text   pxPortInitialiseStack	(port_c.obj)
+  00000DA2 00000016 .text   vPortStartTickTimer	(port_c.obj)
+  00000DB8 00000012 .text   xPortStartScheduler	(port_c.obj)
+  00000DCA 00000026 .text   vPortEnterCritical	(port_c.obj)
+  00000DF0 00000018 .text   vPortExitCritical	(port_c.obj)
+  00000E08 00000026 .text   vPortYieldHandler	(port_c.obj)
+  00000E2E 00000034 .text   vListInitialise	(list_c.obj)
+  00000E62 00000010 .text   vListInitialiseItem	(list_c.obj)
+  00000E72 00000070 .text   vListInsertEnd	(list_c.obj)
+  00000EE2 000000AA .text   vListInsert	(list_c.obj)
+  00000F8C 00000074 .text   uxListRemove	(list_c.obj)
+  00001000 00000154 .text   pvPortMalloc	(heap_4_c.obj)
+  00001154 0000007A .text   vPortFree	(heap_4_c.obj)
+  000011CE 000000CC .text   prvHeapInit	(heap_4_c.obj)
+  0000129A 000000CC .text   prvInsertBlockIntoFreeList	(heap_4_c.obj)
+  00001366 0000001C .text   HWEnDi	(TickCntr1_c.obj)
+  00001382 00000014 .text   TickCntr1_Enable	(TickCntr1_c.obj)
+  00001396 00000018 .text   TickCntr1_Init	(TickCntr1_c.obj)
+  000013AE 00000022 .text   TickCntr1_Interrupt	(TickCntr1_c.obj)
+  000013D0 00000002 .text   MCUC1_Init	(MCUC1_c.obj)
+  000013D2 0000004C .text   TickCntr1_OnInterrupt	(FRTOS1_c.obj)
+  0000141E 00000006 .text   CreateTasks_CreateTasks	(CreateTasks_c.obj)
+  00001424 00000002 .text   Cpu_Interrupt	(Cpu_c.obj)
+  00001426 00000066 .text   __initialize_hardware	(Cpu_c.obj)
+  0000148C 00000138 .text   PE_low_level_init	(Cpu_c.obj)
+  000015C4 00000002 .text   __initialize_system	(startcf_c.obj)
+  000015C6 00000062 .text   __copy_rom_section	(startcf_c.obj)
+  00001628 00000046 .text   __copy_rom_sections_to_ram	(startcf_c.obj)
+  0000166E 00000004 .text   _ExitProcess	(startcf_c.obj)
+  00001672 00000210 .text   clear_mem	(startcf_c.obj)
+  00001882 00000090 .text   _startup	(startcf_c.obj)
+  00001912 00000012 .text   main	(main_c.obj)
+  00001924 00000026 .text   vTaskIdleTask	(frtos_tasks_c.obj)
+  0000194A 0000003A .text   CreateTasks	(frtos_tasks_c.obj)
+  00001984 00000014 .text   FRTOS1_vApplicationStackOverflowHook	(Events_c.obj)
+  00001998 00000002 .text   FRTOS1_vApplicationTickHook	(Events_c.obj)
+  0000199A 00000002 .text   FRTOS1_vApplicationIdleHook	(Events_c.obj)
+  0000199C 0000000C .text   FRTOS1_vApplicationMallocFailedHook	(Events_c.obj)
+  000019A8 00000010 .text   memset	(libc.a mem.o          )
+  000019B8 00000088 .text   __fill_mem	(libc.a mem_funcs.o    )
+  00001A40 0000000C .text   _ewl_exit	(librt.a abort_exit.o   )
+  00001A4C 0000001C .text   __call_static_initializers	(librt.a cf_staticinitia)
+  00001A68 0000002C .text   __destroy_global_chain	(librt.a cf_staticinitia)
+  00001A94 00000005 .rodata @490	(tasks_c.obj)
+  00001A9C 00000004 .rodata xHeapStructSize	(heap_4_c.obj)
+  00001AA0 0000000A .rodata @248	(frtos_tasks_c.obj)
+#>00001AAC          ___ROM_AT (linker command file)
+#>00001AAC          ___DATA_ROM (linker command file)
+
+# .data
+#>00800000          ___DATA_RAM (linker command file)
+#>00800000          __exception_table_start__ (linker command file)
+# Exception index
+  00800000 00000000         Exception Table Index	()
+#>00800000          __exception_table_end__ (linker command file)
+#>00800000          ___sinit__ (linker command file)
+# Linker generated symbols
+  00800000 00000004         static initializer	(linker generated)
+#>00800004          __START_DATA (linker command file)
+#>00800004          __END_DATA (linker command file)
+#>00800004          __START_SDATA (linker command file)
+  00800004 00000004 .sdata  uxCriticalNesting	(port_c.obj)
+#>00800008          __END_SDATA (linker command file)
+#>00800008          ___DATA_END (linker command file)
+#>00800008          __SDA_BASE (linker command file)
+
+# .bss
+#>00800008          ___BSS_START (linker command file)
+#>00800008          __START_SBSS (linker command file)
+  00800008 00000004 .sbss   pxCurrentTCB	(tasks_c.obj)
+  0080000C 00000004 .sbss   uxCurrentNumberOfTasks	(tasks_c.obj)
+  00800010 00000004 .sbss   xTickCount	(tasks_c.obj)
+  00800014 00000004 .sbss   uxTopReadyPriority	(tasks_c.obj)
+  00800018 00000004 .sbss   xSchedulerRunning	(tasks_c.obj)
+  0080001C 00000004 .sbss   uxPendedTicks	(tasks_c.obj)
+  00800020 00000004 .sbss   xYieldPending	(tasks_c.obj)
+  00800024 00000004 .sbss   xNumOfOverflows	(tasks_c.obj)
+  00800028 00000004 .sbss   uxTaskNumber	(tasks_c.obj)
+  0080002C 00000004 .sbss   xNextTaskUnblockTime	(tasks_c.obj)
+  00800030 00000004 .sbss   xIdleTaskHandle	(tasks_c.obj)
+  00800034 00000004 .sbss   uxSchedulerSuspended	(tasks_c.obj)
+  00800038 00000014 .sbss   xSuspendedTaskList	(tasks_c.obj)
+  0080004C 00000014 .sbss   xPendingReadyList	(tasks_c.obj)
+  00800060 00000004 .sbss   pxOverflowDelayedTaskList	(tasks_c.obj)
+  00800064 00000004 .sbss   pxDelayedTaskList	(tasks_c.obj)
+  00800068 00000014 .sbss   xDelayedTaskList2	(tasks_c.obj)
+  0080007C 00000014 .sbss   xDelayedTaskList1	(tasks_c.obj)
+  00800090 00000078 .sbss   pxReadyTasksLists	(tasks_c.obj)
+  00800108 00000004 .sbss   pxEnd	(heap_4_c.obj)
+  0080010C 00000004 .sbss   xFreeBytesRemaining	(heap_4_c.obj)
+  00800110 00000004 .sbss   xMinimumEverFreeBytesRemaining	(heap_4_c.obj)
+  00800114 00000004 .sbss   xBlockAllocatedBit	(heap_4_c.obj)
+  00800118 00000008 .sbss   xStart	(heap_4_c.obj)
+  00800120 00001000 .sbss   ucHeap	(heap_4_c.obj)
+  00801120 00000001 .sbss   EnUser	(TickCntr1_c.obj)
+  00801121 00000001 .sbss   SR_lock	(Cpu_c.obj)
+#>00801124          __END_SBSS (linker command file)
+#>00801124          __START_BSS (linker command file)
+  00801124 00000004 .bss    __global_destructor_chain	(librt.a cf_staticinitia)
+#>00801128          __END_BSS (linker command file)
+#>00801128          ___BSS_END (linker command file)
+
+# .custom
+#>00801128          ___HEAP_START (linker command file)
+#>00801128          ___heap_addr (linker command file)
+#>00801528          ___HEAP_END (linker command file)
+#>00801528          ___SP_END (linker command file)
+#>00801928          ___SP_INIT (linker command file)
+#>00801528          ___mem_limit (linker command file)
+#>00000010          ___stack_safety (linker command file)
+#>00801928          __SP_INIT (linker command file)
+#>00801928          ___SP_AFTER_RESET (linker command file)
+#>00001AB4          _romp_at (linker command file)
+
+# .romp
+#>00001AB4          __S_romp (linker command file)
+
+
+# Memory map:
+  v_addr   p_addr   size     name
+  00000000 00000000 000001BC .abs__InterruptVectorTable abs__InterruptVectorTable
+  0000040D 0000040D 00000001 .abs_NVPROT_INIT abs_NVPROT_INIT
+  0000040F 0000040F 00000001 .abs_NVOPT_INIT abs_NVOPT_INIT
+  00000410 00000410 00000000 .code      code
+  00000410 00000410 0000169C .text      code
+  00800000 00800000 00000000 .userram   userram
+  00800000 00001AAC 00000008 .data      userram
+  00800008 00800008 00001120 .bss       userram
+  00801128 00801128 00000000 .custom    userram
+  00801128 00001AB4 00000018 .romp      userram
+
+# Link start time: Sun Jul 08 13:21:18 2018
+# Link end time: Sun Jul 08 13:21:19 2018
