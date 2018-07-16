@@ -5,7 +5,7 @@
 **     Component   : Events
 **     Version     : Driver 01.02
 **     Compiler    : CodeWarrior ColdFireV1 C Compiler
-**     Date/Time   : 2018-07-08, 10:32, # CodeGen: 0
+**     Date/Time   : 2018-07-13, 17:44, # CodeGen: 0
 **     Abstract    :
 **         This is user's event module.
 **         Put your event handler code here.
@@ -64,70 +64,66 @@
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
-#include "FRTOS1.h"
-#include "VL1swi.h"
-#include "TickCntr1.h"
+#include "LED_Red.h"
+#include "LED_Green.h"
 #include "MCUC1.h"
-#include "UTIL1.h"
-#include "Led_Red.h"
-#include "Led_Green.h"
-#include "CreateTasks.h"
+#include "CS1.h"
+#include "PeriodicCounter.h"
+#include "ACCEL1.h"
+#include "G11.h"
+#include "G21.h"
+#include "Sleep1.h"
+#include "AD1.h"
+#include "WAIT1.h"
+#include "MPR08x1.h"
+#include "Attn1.h"
+#include "Irq1.h"
+#include "CI2C1.h"
 
 
-void FRTOS1_vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName);
+void PeriodicCounter_OnInterrupt(void);
 /*
 ** ===================================================================
-**     Event       :  FRTOS1_vApplicationStackOverflowHook (module Events)
+**     Event       :  PeriodicCounter_OnInterrupt (module Events)
 **
-**     Component   :  FRTOS1 [FreeRTOS]
+**     Component   :  PeriodicCounter [TimerInt]
 **     Description :
-**         if enabled, this hook will be called in case of a stack
-**         overflow.
+**         When a timer interrupt occurs this event is called (only
+**         when the component is enabled - <Enable> and the events are
+**         enabled - <EnableEvent>). This event is enabled only if a
+**         <interrupt service/event> is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void MPR08x1_OnPress(byte button);
+/*
+** ===================================================================
+**     Event       :  MPR08x1_OnPress (module Events)
+**
+**     Component   :  MPR08x1 [MPR08x]
+**     Description :
+**         Event for a button pressed. You can disable this event if
+**         you are not interested in it in order to save code size.
 **     Parameters  :
 **         NAME            - DESCRIPTION
-**         pxTask          - Task handle
-**       * pcTaskName      - Pointer to task name
+**         button          - Button number, in the range 0 to 7.
 **     Returns     : Nothing
 ** ===================================================================
 */
 
-void FRTOS1_vApplicationTickHook(void);
+void AD1_OnEnd(void);
 /*
 ** ===================================================================
-**     Event       :  FRTOS1_vApplicationTickHook (module Events)
+**     Event       :  AD1_OnEnd (module Events)
 **
-**     Component   :  FRTOS1 [FreeRTOS]
+**     Component   :  AD1 [ADC]
 **     Description :
-**         If enabled, this hook will be called by the RTOS for every
-**         tick increment.
-**     Parameters  : None
-**     Returns     : Nothing
-** ===================================================================
-*/
-
-void FRTOS1_vApplicationIdleHook(void);
-/*
-** ===================================================================
-**     Event       :  FRTOS1_vApplicationIdleHook (module Events)
-**
-**     Component   :  FRTOS1 [FreeRTOS]
-**     Description :
-**         If enabled, this hook will be called when the RTOS is idle.
-**         This might be a good place to go into low power mode.
-**     Parameters  : None
-**     Returns     : Nothing
-** ===================================================================
-*/
-
-void FRTOS1_vApplicationMallocFailedHook(void);
-/*
-** ===================================================================
-**     Event       :  FRTOS1_vApplicationMallocFailedHook (module Events)
-**
-**     Component   :  FRTOS1 [FreeRTOS]
-**     Description :
-**         If enabled, the RTOS will call this hook in case memory
-**         allocation failed.
+**         This event is called after the measurement (which consists
+**         of <1 or more conversions>) is/are finished.
+**         The event is available only when the <Interrupt
+**         service/event> property is enabled.
 **     Parameters  : None
 **     Returns     : Nothing
 ** ===================================================================

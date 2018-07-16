@@ -1,8 +1,8 @@
-Generated_Code/Led_Green_c.obj: C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\Led_Green.c \
+Generated_Code/LED_Green_c.obj: C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\LED_Green.c \
 	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\ewl\EWL_C\include\lib_ewl.prefix \
 	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\ewl\EWL_C\include\common.prefix \
 	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\ewl\EWL_C\include\ewl_c_version.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\Led_Green.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\LED_Green.h \
 	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\PE_Types.h \
 	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\ewl\EWL_C\include\stdint.h \
 	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\ewl\EWL_C\include\ansi_parms.h \

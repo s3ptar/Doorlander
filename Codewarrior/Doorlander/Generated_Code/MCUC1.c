@@ -6,7 +6,7 @@
 **     Component   : McuLibConfig
 **     Version     : Component 01.012, Driver 01.00, CPU db: 3.00.063
 **     Compiler    : CodeWarrior ColdFireV1 C Compiler
-**     Date/Time   : 2018-07-08, 11:02, # CodeGen: 1
+**     Date/Time   : 2018-07-14, 15:59, # CodeGen: 5
 **     Abstract    :
 **          Configures the drivers for various SDKs and APIs used.
 **     Settings    :

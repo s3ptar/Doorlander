@@ -7,7 +7,7 @@
 **     Version     : Component 01.010, Driver 01.12, CPU db: 3.00.063
 **     Datasheet   : MCF51JM128RM Rev. 2 6/2009
 **     Compiler    : CodeWarrior ColdFireV1 C Compiler
-**     Date/Time   : 2018-07-08, 12:55, # CodeGen: 11
+**     Date/Time   : 2018-07-15, 09:48, # CodeGen: 19
 **     Abstract    :
 **         This component "MCF51JM128_64" contains initialization of the
 **         CPU and provides basic methods and events for CPU core
@@ -15,8 +15,10 @@
 **     Settings    :
 **
 **     Contents    :
-**         EnableInt  - void Cpu_EnableInt(void);
-**         DisableInt - void Cpu_DisableInt(void);
+**         EnableInt   - void Cpu_EnableInt(void);
+**         DisableInt  - void Cpu_DisableInt(void);
+**         SetWaitMode - void Cpu_SetWaitMode(void);
+**         Delay100US  - void Cpu_Delay100US(word us100);
 **
 **     Copyright : 1997 - 2014 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -63,14 +65,21 @@
 */         
 
 /* MODULE Cpu. */
-#include "FRTOS1.h"
-#include "VL1swi.h"
-#include "TickCntr1.h"
+#include "LED_Red.h"
+#include "LED_Green.h"
 #include "MCUC1.h"
-#include "UTIL1.h"
-#include "Led_Red.h"
-#include "Led_Green.h"
-#include "CreateTasks.h"
+#include "CS1.h"
+#include "PeriodicCounter.h"
+#include "ACCEL1.h"
+#include "G11.h"
+#include "G21.h"
+#include "Sleep1.h"
+#include "AD1.h"
+#include "WAIT1.h"
+#include "MPR08x1.h"
+#include "Attn1.h"
+#include "Irq1.h"
+#include "CI2C1.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
@@ -98,6 +107,84 @@ ISR(Cpu_Interrupt)
   /* asm (HALT) */
 }
 
+
+/*
+** ===================================================================
+**     Method      :  Cpu_SetWaitMode (component MCF51JM128_64)
+**     Description :
+**         Sets the low power mode - Wait mode.
+**         For more information about the wait mode, see the
+**         documentation of this CPU.
+**         Release from the Wait mode: Reset or interrupt
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+/*
+void Cpu_SetWaitMode(void)
+
+**      This method is implemented as macro in the header module. **
+*/
+
+/*
+** ===================================================================
+**     Method      :  Cpu_Delay100US (component MCF51JM128_64)
+**     Description :
+**         This method realizes software delay. The length of delay is
+**         at least 100 microsecond multiply input parameter [us100].
+**         As the delay implementation is not based on real clock, the
+**         delay time may be increased by interrupt service routines
+**         processed during the delay. The method is independent on
+**         selected speed mode.
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**         us100           - Number of 100 us delay repetitions.
+**     Returns     : Nothing
+** ===================================================================
+*/
+#pragma aligncode on
+
+__declspec(register_abi) void Cpu_Delay100US(word us100:__D0)
+{
+  /* irremovable one time overhead (ignored): 11 cycles */
+  /* move: 1 cycle overhead (load parameter into register) */
+  /* jsr:  3 cycles overhead (jump to subroutine) */
+  /* andi: 1 cycle overhead (clear upper word of d0) */
+  /* tpf: 1 cycle overhead (alignment) */
+  /* rts:  5 cycles overhead (return from subroutine) */
+
+  /* aproximate irremovable overhead for each 100us cycle (counted) : 3 cycles */
+  /* subq.l 1 cycles overhead  */
+  /* bne.b  2 cycles overhead  */
+
+  /* Disable MISRA rule 55 checking - Non-case label used */
+  /*lint -esym( 961, 55)   */
+#pragma unused(us100)
+  asm {
+    naked
+    andi.l #0xFFFF,d0                  /* parameter is word - clear the rest of d0 register */
+    tpf                                /* alignment */
+loop:
+    /* 100 us delay block begin */
+    /*
+     * Delay
+     *   - requested                  : 100 us @ 4.194304MHz,
+     *   - possible                   : 419 c, 99897.38 ns, delta -102.62 ns
+     *   - without removable overhead : 416 c, 99182.13 ns
+     */
+    move.l #0x008A,d1                  /* (1 c: 238.42 ns) number of iterations */
+label0:
+    subq.l #1,d1                       /* (1 c: 238.42 ns) decrement d1 */
+    bne.b label0                       /* (2 c: 476.84 ns) repeat 138x */
+    tpf                                /* (1 c: 238.42 ns) wait for 1 c */
+    /* 100 us delay block end */
+    subq.l #1,d0                       /* parameter is passed via d0 register */
+    bne.w loop                         /* next loop */
+    rts                                /* return from subroutine */
+  }
+  /* Restore MISRA rule 55 checking - Non-case label used */
+  /*lint +esym( 961, 55)   */
+}
 
 /*
 ** ===================================================================
@@ -150,8 +237,8 @@ void __initialize_hardware(void)
   /* ### MCF51JM128_64 "Cpu" init code ... */
   /*  PE initialization code after reset */
   /* Common initialization of the write once registers */
-  /* SOPT1: COPT=0,STOPE=1,WAITE=1,??=0,??=0,??=0,??=0 */
-  setReg8(SOPT1, 0x30U);                
+  /* SOPT1: COPT=0,STOPE=0,WAITE=1,??=0,??=0,??=0,??=0 */
+  setReg8(SOPT1, 0x10U);                
   /* SOPT2: COPCLKS=0,COPW=0,USB_BIGEND=1,CLKOUT_EN=0,CMT_CLK_SEL=0,SPI1FE=1,SPI2FE=1,ACIC=0 */
   setReg8(SOPT2, 0x26U);                
   /* SPMSC1: LVWF=0,LVWACK=0,LVWIE=0,LVDRE=1,LVDSE=1,LVDE=1,??=0,BGBE=0 */
@@ -176,8 +263,8 @@ void __initialize_hardware(void)
     MCGSC = *(unsigned char*)0x03FEU;  /* Initialize MCGSC register from a non volatile memory */
   }
   /*lint -restore Enable MISRA rule (11.3) checking. */
-  /* MCGC2: BDIV=1,RANGE=1,HGO=1,LP=0,EREFS=1,ERCLKEN=1,EREFSTEN=0 */
-  setReg8(MCGC2, 0x76U);               /* Set MCGC2 register */ 
+  /* MCGC2: BDIV=1,RANGE=0,HGO=0,LP=0,EREFS=0,ERCLKEN=0,EREFSTEN=0 */
+  setReg8(MCGC2, 0x40U);               /* Set MCGC2 register */ 
   /* MCGC1: CLKS=0,RDIV=0,IREFS=1,IRCLKEN=1,IREFSTEN=0 */
   setReg8(MCGC1, 0x06U);               /* Set MCGC1 register */ 
   /* MCGC3: LOLIE=0,PLLS=0,CME=0,DIV32=0,VDIV=1 */
@@ -214,12 +301,20 @@ void PE_low_level_init(void)
   /* SCGC3: ??=1,??=1,??=1,??=1,??=1,??=1,??=1,RNGA=1 */
   setReg8(SCGC3, 0xFFU);                
   /* Common initialization of the CPU registers */
-  /* PTFD: PTFD1=1,PTFD0=1 */
-  setReg8Bits(PTFD, 0x03U);             
-  /* PTFPE: PTFPE1=0,PTFPE0=0 */
-  clrReg8Bits(PTFPE, 0x03U);            
-  /* PTFDD: PTFDD1=1,PTFDD0=1 */
-  setReg8Bits(PTFDD, 0x03U);            
+  /* PTCD: PTCD4=1 */
+  setReg8Bits(PTCD, 0x10U);             
+  /* PTCPE: PTCPE4=0 */
+  clrReg8Bits(PTCPE, 0x10U);            
+  /* PTCDD: PTCDD7=1,PTCDD4=1,PTCDD1=0,PTCDD0=0 */
+  clrSetReg8Bits(PTCDD, 0x03U, 0x90U);  
+  /* PTFD: PTFD4=1,PTFD3=1,PTFD2=0,PTFD1=1,PTFD0=0 */
+  clrSetReg8Bits(PTFD, 0x05U, 0x1AU);   
+  /* PTFPE: PTFPE4=0,PTFPE3=0,PTFPE2=0,PTFPE1=0,PTFPE0=0 */
+  clrReg8Bits(PTFPE, 0x1FU);            
+  /* PTFDD: PTFDD4=1,PTFDD3=1,PTFDD2=1,PTFDD1=1,PTFDD0=1 */
+  setReg8Bits(PTFDD, 0x1FU);            
+  /* APCTL1: ADPC7=1,ADPC6=1,ADPC5=1,ADPC4=1 */
+  setReg8Bits(APCTL1, 0xF0U);           
   /* PTASE: PTASE5=0,PTASE4=0,PTASE3=0,PTASE2=0,PTASE1=0,PTASE0=0 */
   clrReg8Bits(PTASE, 0x3FU);            
   /* PTBSE: PTBSE7=0,PTBSE6=0,PTBSE5=0,PTBSE4=0,PTBSE3=0,PTBSE2=0,PTBSE1=0,PTBSE0=0 */
@@ -264,8 +359,6 @@ void PE_low_level_init(void)
   clrReg8Bits(PTGIFE, 0x3FU);           
   /* PTADD: PTADD7=1,PTADD6=1 */
   setReg8Bits(PTADD, 0xC0U);            
-  /* PTCDD: PTCDD7=1 */
-  setReg8Bits(PTCDD, 0x80U);            
   /* PTGDD: PTGDD7=1,PTGDD6=1 */
   setReg8Bits(PTGDD, 0xC0U);            
   /* PTHDD: PTHDD4=1,PTHDD3=1,PTHDD2=1,PTHDD1=1,PTHDD0=1 */
@@ -273,17 +366,33 @@ void PE_low_level_init(void)
   /* PTJDD: PTJDD4=1,PTJDD3=1,PTJDD2=1,PTJDD1=1,PTJDD0=1 */
   setReg8Bits(PTJDD, 0x1FU);            
   /* ### Shared modules init code ... */
+  /* ### BitIO "LED_Red" init code ... */
+  /* ### BitIO "LED_Green" init code ... */
   /* ### McuLibConfig "MCUC1" init code ... */
   MCUC1_Init();
-  /* ### FreeCntr "TickCntr1" init code ... */
-  TickCntr1_Init();
-  /* PEX_RTOS_INIT() is a macro should already have been called either from main()
-     or Processor Expert startup code. So we don't call it here again. */
-  /* PEX_RTOS_INIT(); */ /* ### FreeRTOS "FRTOS1" init code ... */
-  /* ### BitIO "Led_Red" init code ... */
-  /* ### BitIO "Led_Green" init code ... */
-  /* ### FreeRTOS_Tasks "CreateTasks" init code ... */
-  CreateTasks_CreateTasks();
+  CS1_Init(); /* ### CriticalSection "CS1" init code ... */
+  /* ### TimerInt "PeriodicCounter" init code ... */
+  PeriodicCounter_Init();
+  /* ###  "AD1" init code ... */
+  AD1_Init();
+  WAIT1_Init(); /* ### Wait "WAIT1" init code ... */
+  /* ### BitIO "G11" init code ... */
+  /* ### BitIO "G21" init code ... */
+  /* ### BitIO "Sleep1" init code ... */
+  /* ### MMA7260Q "ACCEL1" init code ... */
+  (void)ACCEL1_Init();
+  /* ### InternalI2C "CI2C1" init code ... */
+  CI2C1_Init();
+  /* ### BitIO "Attn1" init code ... */
+  /* ### External interrupt "Irq1" init code ... */
+  /* IRQSC: ??=0,IRQPDD=1,IRQEDG=0,IRQPE=1,IRQF=0,IRQACK=0,IRQIE=0,IRQMOD=0 */
+  setReg8(IRQSC, 0x50U);                
+  /* IRQSC: IRQACK=1 */
+  setReg8Bits(IRQSC, 0x04U);            
+  /* IRQSC: IRQIE=0 */
+  clrReg8Bits(IRQSC, 0x02U);            
+  /* ### MPR08x "MPR08x1" init code ... */
+  MPR08x1_Init();
   /* INTC_WCR: ENB=1,??=0,??=0,??=0,??=0,MASK=0 */
   setReg8(INTC_WCR, 0x80U);             
   SR_lock = 0x00;

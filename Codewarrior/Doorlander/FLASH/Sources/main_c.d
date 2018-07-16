@@ -17,38 +17,22 @@ Sources/main_c.obj: C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Sources\m
 	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\PE_Const.h \
 	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\IO_Map.h \
 	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Sources\Events.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\FRTOS1.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\LED_Red.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\LED_Green.h \
 	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\MCUC1.h \
 	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\MCUC1config.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\FreeRTOSConfig.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\FRTOS1config.h \
-	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\hcs08_compatibility\hidef.h \
-	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\ewl\EWL_C\include\stddef.h \
-	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\ewl\EWL_C\include\cstddef \
-	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\ewl\EWL_C\include\null.h \
-	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\ewl\EWL_C\include\size_t.h \
-	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\ewl\EWL_C\include\wchar_t.h \
-	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\ewl\EWL_C\include\ewl_rsize_t.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\FreeRTOS.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\projdefs.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\portable.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\deprecated_definitions.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\portmacro.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\mpu_wrappers.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\task.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\list.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\semphr.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\queue.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\event_groups.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\timers.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\VL1swi.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\TickCntr1.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\UTIL1.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\UTIL1config.h \
-	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\ewl\EWL_C\include\string.h \
-	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\ewl\EWL_C\include\cstring \
-	C:\Freescale\CW\ MCU\ v11.0\MCU\ColdFire_Support\ewl\EWL_C\include\string_api.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\Led_Red.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\Led_Green.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\CreateTasks.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Sources\Idle_Task.h 
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\CS1.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\CS1config.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\PeriodicCounter.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\ACCEL1.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\G11.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\G21.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\Sleep1.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\AD1.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\WAIT1.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\WAIT1config.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\MPR08x1.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\Attn1.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\CI2C1.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\Irq1.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Sources\Battery.h 

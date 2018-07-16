@@ -5,7 +5,7 @@
 **     Processor   : MCF51JM128VLH
 **     Version     : Component 01.010, Driver 01.12, CPU db: 3.00.063
 **     Compiler    : CodeWarrior ColdFireV1 C Compiler
-**     Date/Time   : 2018-07-08, 12:55, # CodeGen: 11
+**     Date/Time   : 2018-07-15, 09:31, # CodeGen: 16
 **     Abstract    :
 **         This component "MCF51JM128_64" contains initialization of the
 **         CPU and provides basic methods and events for CPU core
@@ -57,14 +57,21 @@
 **  @{
 */         
 #include "Cpu.h"
-#include "FRTOS1.h"
-#include "VL1swi.h"
-#include "TickCntr1.h"
+#include "LED_Red.h"
+#include "LED_Green.h"
 #include "MCUC1.h"
-#include "UTIL1.h"
-#include "Led_Red.h"
-#include "Led_Green.h"
-#include "CreateTasks.h"
+#include "CS1.h"
+#include "PeriodicCounter.h"
+#include "ACCEL1.h"
+#include "G11.h"
+#include "G21.h"
+#include "Sleep1.h"
+#include "AD1.h"
+#include "WAIT1.h"
+#include "MPR08x1.h"
+#include "Attn1.h"
+#include "Irq1.h"
+#include "CI2C1.h"
 #include "startcf.h"
 
 extern unsigned long far _SP_INIT[];
@@ -138,7 +145,7 @@ const tIsrFunc _InterruptVectorTable[111] @0x00000000 = { /* Interrupt vector ta
   Cpu_Interrupt,                       /* 0x3D  0x000000F4   -   -   ivVunsinstr    unused by PE */
   Cpu_Interrupt,                       /* 0x3E  0x000000F8   -   -   ivVReserved62  unused by PE */
   Cpu_Interrupt,                       /* 0x3F  0x000000FC   -   -   ivVReserved63  unused by PE */
-  Cpu_Interrupt,                       /* 0x40  0x00000100   -   -   ivVirq         unused by PE */
+  Irq1_Interrupt,                      /* 0x40  0x00000100   7   mid   ivVirq         used by PE */
   Cpu_Interrupt,                       /* 0x41  0x00000104   -   -   ivVlvd         unused by PE */
   Cpu_Interrupt,                       /* 0x42  0x00000108   -   -   ivVlol         unused by PE */
   Cpu_Interrupt,                       /* 0x43  0x0000010C   -   -   ivVspi1        unused by PE */
@@ -162,10 +169,10 @@ const tIsrFunc _InterruptVectorTable[111] @0x00000000 = { /* Interrupt vector ta
   Cpu_Interrupt,                       /* 0x55  0x00000154   -   -   ivVsci2rx      unused by PE */
   Cpu_Interrupt,                       /* 0x56  0x00000158   -   -   ivVsci2tx      unused by PE */
   Cpu_Interrupt,                       /* 0x57  0x0000015C   -   -   ivVkeyboard    unused by PE */
-  Cpu_Interrupt,                       /* 0x58  0x00000160   -   -   ivVadc         unused by PE */
+  AD1_Interrupt,                       /* 0x58  0x00000160   2   6   ivVadc         used by PE */
   Cpu_Interrupt,                       /* 0x59  0x00000164   -   -   ivVacmpx       unused by PE */
   Cpu_Interrupt,                       /* 0x5A  0x00000168   -   -   ivViic1x       unused by PE */
-  TickCntr1_Interrupt,                 /* 0x5B  0x0000016C   2   3   ivVrtc         used by PE */
+  PeriodicCounter_Interrupt,           /* 0x5B  0x0000016C   2   3   ivVrtc         used by PE */
   Cpu_Interrupt,                       /* 0x5C  0x00000170   -   -   ivViic2x       unused by PE */
   Cpu_Interrupt,                       /* 0x5D  0x00000174   -   -   ivVcmt         unused by PE */
   Cpu_Interrupt,                       /* 0x5E  0x00000178   -   -   ivVcanwu       unused by PE */
@@ -184,7 +191,7 @@ const tIsrFunc _InterruptVectorTable[111] @0x00000000 = { /* Interrupt vector ta
   Cpu_Interrupt,                       /* 0x6B  0x000001AC   -   -   ivVL4swi       unused by PE */
   Cpu_Interrupt,                       /* 0x6C  0x000001B0   -   -   ivVL3swi       unused by PE */
   Cpu_Interrupt,                       /* 0x6D  0x000001B4   -   -   ivVL2swi       unused by PE */
-  vPortYieldISR                        /* 0x6E  0x000001B8   1   0   ivVL1swi       used by PE */
+  Cpu_Interrupt                        /* 0x6E  0x000001B8   -   -   ivVL1swi       unused by PE */
 };
 /*!
 ** @}
