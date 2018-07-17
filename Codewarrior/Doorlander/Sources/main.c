@@ -45,6 +45,10 @@
 #include "Attn1.h"
 #include "Irq1.h"
 #include "CI2C1.h"
+#include "FT800_SPI.h"
+#include "SPI1.h"
+#include "FT800_nPowerDown.h"
+#include "FT800_nCS.h"
 /* Include shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"

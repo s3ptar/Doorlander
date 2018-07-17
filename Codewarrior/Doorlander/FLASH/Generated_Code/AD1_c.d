@@ -34,4 +34,8 @@ Generated_Code/AD1_c.obj: C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Gen
 	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\MPR08x1.h \
 	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\Attn1.h \
 	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\CI2C1.h \
-	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\Irq1.h 
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\Irq1.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\FT800_SPI.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\SPI1.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\FT800_nPowerDown.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\FT800_nCS.h 

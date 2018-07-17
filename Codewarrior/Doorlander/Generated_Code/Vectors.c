@@ -5,7 +5,7 @@
 **     Processor   : MCF51JM128VLH
 **     Version     : Component 01.010, Driver 01.12, CPU db: 3.00.063
 **     Compiler    : CodeWarrior ColdFireV1 C Compiler
-**     Date/Time   : 2018-07-15, 09:31, # CodeGen: 16
+**     Date/Time   : 2018-07-16, 19:22, # CodeGen: 23
 **     Abstract    :
 **         This component "MCF51JM128_64" contains initialization of the
 **         CPU and provides basic methods and events for CPU core
@@ -72,6 +72,10 @@
 #include "Attn1.h"
 #include "Irq1.h"
 #include "CI2C1.h"
+#include "FT800_SPI.h"
+#include "SPI1.h"
+#include "FT800_nPowerDown.h"
+#include "FT800_nCS.h"
 #include "startcf.h"
 
 extern unsigned long far _SP_INIT[];
@@ -148,7 +152,7 @@ const tIsrFunc _InterruptVectorTable[111] @0x00000000 = { /* Interrupt vector ta
   Irq1_Interrupt,                      /* 0x40  0x00000100   7   mid   ivVirq         used by PE */
   Cpu_Interrupt,                       /* 0x41  0x00000104   -   -   ivVlvd         unused by PE */
   Cpu_Interrupt,                       /* 0x42  0x00000108   -   -   ivVlol         unused by PE */
-  Cpu_Interrupt,                       /* 0x43  0x0000010C   -   -   ivVspi1        unused by PE */
+  Cpu_Interrupt,                       /* 0x43  0x0000010C   6   5   ivVspi1        unused by PE */
   Cpu_Interrupt,                       /* 0x44  0x00000110   -   -   ivVspi2        unused by PE */
   Cpu_Interrupt,                       /* 0x45  0x00000114   -   -   ivVusb         unused by PE */
   Cpu_Interrupt,                       /* 0x46  0x00000118   -   -   ivVReserved70  unused by PE */

@@ -1131,5 +1131,164 @@ autoselected pull
       <event name="OnGeneralCall" v="don&amp;apos;t generate code" />
     </Events>
   </Bean>
+  <Bean name="FT800_SPI" type="GenericSPI">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="FT800_SPI" />
+      <boolgroup name="SPI" v="Enabled">
+        <inhrbean type="Init_SPI">
+          <Enabled v="Y" />
+          <Template v="Init_SPI_ColdFireV1" />
+          <Properties>
+            <Component_name v="SPI1" />
+            <Device v="SPI1" />
+            <group name="Settings">
+              <group name="Clock settings">
+                <SPI1_Clock_Gate v="Enabled" />
+                <Baud_Rate_Prescaler_Divisor v="1" />
+                <Baud_Rate_Divisor v="2" />
+                <Frequency v="2097.152 kHz" />
+              </group>
+              <Mode_Select v="Master" />
+              <Clock_Polarity v="active-high" />
+              <Clock_Phase v="First edge" />
+              <Data_shift_order v="MSB first" />
+              <Bidirectional_mode v="Disabled" />
+              <Output_enable_in_Bidirect_ v="no" />
+              <SS_pin_function v="General Purpose I/O" />
+              <Stop_in_Wait_Mode v="Disabled" />
+              <Data_length v="8 bits" />
+              <Match_value v="0" />
+              <Input_filter_on_SPI_pins v="Enabled" />
+            </group>
+            <group name="Pins">
+              <SCK_pin v="PTE6_SPSCK1" />
+              <boolgroup name="MISO pin allocation" v="Enabled">
+                <MISO_pin v="PTE4_MISO1" />
+              </boolgroup>
+              <boolgroup name="MOSI pin allocation" v="Enabled">
+                <MOSI_pin v="PTE5_MOSI1" />
+              </boolgroup>
+              <boolgroup name="SS pin allocation" v="Disabled" />
+            </group>
+            <group name="Interrupts/DMA">
+              <Interrupt v="Vspi1" />
+              <Priority v="default" />
+              <Receive_and_fault_interrupt v="Disabled" />
+              <Transmit_interrupt v="Disabled" />
+              <Match_interrupt v="Disabled" />
+              <ISR_name v="" />
+            </group>
+            <group name="Initialization">
+              <Call_Init_method v="yes" />
+              <Enable_SPI_system v="yes" />
+            </group>
+          </Properties>
+          <Methods>
+            <Init v="generate code" />
+          </Methods>
+          <Events>
+            <EmptySection_DummyValue />
+          </Events>
+        </inhrbean>
+      </boolgroup>
+      <group name="SPI Register">
+        <Status_register v="SPI1S" />
+        <Data_register v="SPI1D" />
+        <Read_Buffer_Full_Flag_Bit v="SPI1S_SPRF" />
+        <Write_Buffer_Empty_Flag_Bit v="SPI1S_SPTEF" />
+      </group>
+    </Properties>
+    <Methods>
+      <RecvChar v="generate code" />
+      <SendChar v="generate code" />
+      <ClearReceiveStatReg v="generate code" />
+      <ClearReceiveDataReg v="generate code" />
+      <WaitTransferDone v="generate code" />
+      <WriteDummy_Read v="generate code" />
+      <Write_ReadDummy v="generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="FT800_nPowerDown" type="BitIO">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="FT800_nPowerDown" />
+      <Pin_for_I_O v="PTD5" />
+      <Pull_resistor sel_value="no pull resistor">
+        
+autoselected pull
+
+        <EmptySection_DummyValue />
+      </Pull_resistor>
+      <Open_drain v="push-pull" />
+      <Slew_rate_control_for_PTD5 v="no" />
+      <Drive_strength_for_PTD5 v="High" />
+      <Input_filter_for_PTD5 v="Disabled" />
+      <Direction v="Output" />
+      <group name="Initialization">
+        <Init__direction v="Output" />
+        <Init__value v="1" />
+      </group>
+      <Safe_mode v="yes" />
+      <Optimization_for v="speed" />
+    </Properties>
+    <Methods>
+      <GetDir v="don&amp;apos;t generate code" />
+      <SetDir v="don&amp;apos;t generate code" />
+      <SetInput v="don&amp;apos;t generate code" />
+      <SetOutput v="don&amp;apos;t generate code" />
+      <GetVal v="generate code" />
+      <PutVal v="generate code" />
+      <ClrVal v="generate code" />
+      <SetVal v="generate code" />
+      <NegVal v="don&amp;apos;t generate code" />
+      <GetRawVal v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="FT800_nCS" type="BitIO">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="FT800_nCS" />
+      <Pin_for_I_O v="PTE7_SS1" />
+      <Pull_resistor sel_value="no pull resistor">
+        
+autoselected pull
+
+        <EmptySection_DummyValue />
+      </Pull_resistor>
+      <Open_drain v="push-pull" />
+      <Slew_rate_control_for_PTE7 v="no" />
+      <Drive_strength_for_PTE7 v="High" />
+      <Input_filter_for_PTE7 v="Disabled" />
+      <Direction v="Output" />
+      <group name="Initialization">
+        <Init__direction v="Output" />
+        <Init__value v="1" />
+      </group>
+      <Safe_mode v="yes" />
+      <Optimization_for v="speed" />
+    </Properties>
+    <Methods>
+      <GetDir v="don&amp;apos;t generate code" />
+      <SetDir v="don&amp;apos;t generate code" />
+      <SetInput v="don&amp;apos;t generate code" />
+      <SetOutput v="don&amp;apos;t generate code" />
+      <GetVal v="generate code" />
+      <PutVal v="generate code" />
+      <ClrVal v="generate code" />
+      <SetVal v="generate code" />
+      <NegVal v="don&amp;apos;t generate code" />
+      <GetRawVal v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
 </PE_PROJECT_SETTINGS_DOCUMENTATION>
 

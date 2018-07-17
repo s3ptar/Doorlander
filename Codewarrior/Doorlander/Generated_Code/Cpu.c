@@ -7,7 +7,7 @@
 **     Version     : Component 01.010, Driver 01.12, CPU db: 3.00.063
 **     Datasheet   : MCF51JM128RM Rev. 2 6/2009
 **     Compiler    : CodeWarrior ColdFireV1 C Compiler
-**     Date/Time   : 2018-07-15, 09:48, # CodeGen: 19
+**     Date/Time   : 2018-07-16, 19:22, # CodeGen: 23
 **     Abstract    :
 **         This component "MCF51JM128_64" contains initialization of the
 **         CPU and provides basic methods and events for CPU core
@@ -80,6 +80,10 @@
 #include "Attn1.h"
 #include "Irq1.h"
 #include "CI2C1.h"
+#include "FT800_SPI.h"
+#include "SPI1.h"
+#include "FT800_nPowerDown.h"
+#include "FT800_nCS.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
@@ -315,6 +319,18 @@ void PE_low_level_init(void)
   setReg8Bits(PTFDD, 0x1FU);            
   /* APCTL1: ADPC7=1,ADPC6=1,ADPC5=1,ADPC4=1 */
   setReg8Bits(APCTL1, 0xF0U);           
+  /* PTDD: PTDD5=1 */
+  setReg8Bits(PTDD, 0x20U);             
+  /* PTDPE: PTDPE5=0 */
+  clrReg8Bits(PTDPE, 0x20U);            
+  /* PTDDD: PTDDD5=1 */
+  setReg8Bits(PTDDD, 0x20U);            
+  /* PTED: PTED7=1 */
+  setReg8Bits(PTED, 0x80U);             
+  /* PTEPE: PTEPE7=0 */
+  clrReg8Bits(PTEPE, 0x80U);            
+  /* PTEDD: PTEDD7=1 */
+  setReg8Bits(PTEDD, 0x80U);            
   /* PTASE: PTASE5=0,PTASE4=0,PTASE3=0,PTASE2=0,PTASE1=0,PTASE0=0 */
   clrReg8Bits(PTASE, 0x3FU);            
   /* PTBSE: PTBSE7=0,PTBSE6=0,PTBSE5=0,PTBSE4=0,PTBSE3=0,PTBSE2=0,PTBSE1=0,PTBSE0=0 */
@@ -393,6 +409,10 @@ void PE_low_level_init(void)
   clrReg8Bits(IRQSC, 0x02U);            
   /* ### MPR08x "MPR08x1" init code ... */
   MPR08x1_Init();
+  /* ### Init_SPI "SPI1" init code ... */
+  SPI1_Init();
+  /* ### BitIO "FT800_nPowerDown" init code ... */
+  /* ### BitIO "FT800_nCS" init code ... */
   /* INTC_WCR: ENB=1,??=0,??=0,??=0,??=0,MASK=0 */
   setReg8(INTC_WCR, 0x80U);             
   SR_lock = 0x00;

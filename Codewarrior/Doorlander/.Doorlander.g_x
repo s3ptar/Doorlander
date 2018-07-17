@@ -18,14 +18,14 @@
       <File Name="Generated_Code/Sleep1.h" FileDate="2018-07-15, 09:31:18" FileAge="1531639878534" FileType="45637" CompNumb="40" />
       <File Name="Generated_Code/G11.c" FileDate="2018-07-15, 09:31:18" FileAge="1531639878543" FileType="45637" CompNumb="38" />
       <File Name="Generated_Code/WAIT1config.h" FileDate="2018-07-15, 09:31:18" FileAge="1531639878590" FileType="45637" CompNumb="42" />
-      <File Name="Generated_Code/MCUC1.h" FileDate="2018-07-14, 15:59:25" FileAge="1531576765321" FileType="45637" CompNumb="24" />
       <File Name="Generated_Code/Sleep1.c" FileDate="2018-07-15, 09:31:18" FileAge="1531639878530" FileType="45637" CompNumb="40" />
+      <File Name="Generated_Code/MCUC1.h" FileDate="2018-07-14, 15:59:25" FileAge="1531576765321" FileType="45637" CompNumb="24" />
       <File Name="Generated_Code/Cpu.h" FileDate="2018-07-15, 09:48:32" FileAge="1531640912358" FileType="45637" CompNumb="7" />
       <File Name="Generated_Code/MCUC1.c" FileDate="2018-07-14, 15:59:25" FileAge="1531576765319" FileType="45637" CompNumb="24" />
-      <File Name="Generated_Code/Cpu.c" FileDate="2018-07-15, 09:48:32" FileAge="1531640912365" FileType="45637" CompNumb="7" />
-      <File Name="Documentation/Doorlander.txt" FileDate="2018-07-16, 04:21:07" FileAge="1531707667336" FileType="3072" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2018-07-16, 19:22:21" FileAge="1531761741008" FileType="45637" CompNumb="7" />
+      <File Name="Documentation/Doorlander.txt" FileDate="2018-07-16, 19:22:23" FileAge="1531761743612" FileType="3072" />
       <File Name="Generated_Code/Irq1.h" FileDate="2018-07-15, 09:31:18" FileAge="1531639878491" FileType="45637" CompNumb="45" />
-      <File Name="Sources/Events.h" FileDate="2018-07-15, 09:31:18" FileAge="1531639878670" FileType="131328" />
+      <File Name="Sources/Events.h" FileDate="2018-07-16, 19:22:21" FileAge="1531761741038" FileType="131328" />
       <File Name="Generated_Code/CS1.h" FileDate="2018-07-14, 15:59:25" FileAge="1531576765314" FileType="45637" CompNumb="25" />
       <File Name="Generated_Code/Irq1.c" FileDate="2018-07-15, 09:31:18" FileAge="1531639878488" FileType="45637" CompNumb="45" />
       <File Name="Sources/Events.c" FileDate="2018-07-15, 09:31:18" FileAge="1531639878686" FileType="131328" />
@@ -37,22 +37,30 @@
       <File Name="Generated_Code/WAIT1.h" FileDate="2018-07-15, 09:31:18" FileAge="1531639878605" FileType="45637" CompNumb="42" />
       <File Name="Generated_Code/LED_Green.c" FileDate="2018-07-13, 17:51:42" FileAge="1531497102001" FileType="45637" CompNumb="9" />
       <File Name="Generated_Code/WAIT1.c" FileDate="2018-07-15, 09:48:25" FileAge="1531640905145" FileType="45637" CompNumb="42" />
-      <File Name="Generated_Code/Vectors.c" FileDate="2018-07-15, 09:31:18" FileAge="1531639878670" FileType="45637" CompNumb="7" />
+      <File Name="Generated_Code/Vectors.c" FileDate="2018-07-16, 19:22:21" FileAge="1531761741008" FileType="45637" CompNumb="7" />
       <File Name="Generated_Code/G21.h" FileDate="2018-07-15, 09:31:18" FileAge="1531639878543" FileType="45637" CompNumb="39" />
       <File Name="Generated_Code/MPR08x1.h" FileDate="2018-07-15, 09:31:18" FileAge="1531639878483" FileType="45637" CompNumb="43" />
-      <File Name="Documentation/Doorlander_SIGNALS.txt" FileDate="2018-07-16, 04:21:07" FileAge="1531707667058" FileType="3072" />
+      <File Name="Generated_Code/FT800_nPowerDown.h" FileDate="2018-07-16, 19:22:20" FileAge="1531761740793" FileType="45637" CompNumb="59" />
+      <File Name="Documentation/Doorlander_SIGNALS.txt" FileDate="2018-07-16, 19:44:54" FileAge="1531763094447" FileType="3072" />
       <File Name="Generated_Code/G21.c" FileDate="2018-07-15, 09:31:18" FileAge="1531639878539" FileType="45637" CompNumb="39" />
       <File Name="Generated_Code/CI2C1.h" FileDate="2018-07-15, 09:31:18" FileAge="1531639878506" FileType="45637" CompNumb="46" />
       <File Name="Generated_Code/MPR08x1.c" FileDate="2018-07-15, 09:31:18" FileAge="1531639878478" FileType="45637" CompNumb="43" />
       <File Name="Generated_Code/IO_Map.h" FileDate="2018-07-13, 17:51:41" FileAge="1531497101956" FileType="45637" />
+      <File Name="Generated_Code/FT800_nPowerDown.c" FileDate="2018-07-16, 19:22:20" FileAge="1531761740793" FileType="45637" CompNumb="59" />
       <File Name="Generated_Code/CI2C1.c" FileDate="2018-07-15, 09:31:18" FileAge="1531639878491" FileType="45637" CompNumb="46" />
       <File Name="Generated_Code/IO_Map.c" FileDate="2018-07-13, 17:51:41" FileAge="1531497101919" FileType="45637" />
       <File Name="Generated_Code/AD1.h" FileDate="2018-07-16, 04:21:06" FileAge="1531707666996" FileType="45637" CompNumb="41" />
+      <File Name="Generated_Code/FT800_nCS.h" FileDate="2018-07-16, 19:22:20" FileAge="1531761740793" FileType="45637" CompNumb="60" />
+      <File Name="Generated_Code/SPI1.h" FileDate="2018-07-16, 19:22:20" FileAge="1531761740837" FileType="45637" CompNumb="58" />
       <File Name="Generated_Code/Attn1.h" FileDate="2018-07-15, 09:31:18" FileAge="1531639878491" FileType="45637" CompNumb="44" />
-      <File Name="Documentation/Doorlander_Settings.xml" FileDate="2018-07-16, 04:21:07" FileAge="1531707667287" FileType="3072" />
+      <File Name="Documentation/Doorlander_Settings.xml" FileDate="2018-07-16, 19:22:23" FileAge="1531761743549" FileType="3072" />
       <File Name="Generated_Code/AD1.c" FileDate="2018-07-16, 04:21:07" FileAge="1531707667008" FileType="45637" CompNumb="41" />
+      <File Name="Generated_Code/FT800_nCS.c" FileDate="2018-07-16, 19:22:20" FileAge="1531761740785" FileType="45637" CompNumb="60" />
+      <File Name="Generated_Code/SPI1.c" FileDate="2018-07-16, 19:22:20" FileAge="1531761740829" FileType="45637" CompNumb="58" />
       <File Name="Generated_Code/Attn1.c" FileDate="2018-07-15, 09:31:18" FileAge="1531639878491" FileType="45637" CompNumb="44" />
-      <File Name="Sources/main.c" FileDate="2018-07-16, 04:20:45" FileAge="1531707645249" FileType="128" />
+      <File Name="Generated_Code/FT800_SPI.h" FileDate="2018-07-16, 19:22:20" FileAge="1531761740809" FileType="45637" CompNumb="53" />
+      <File Name="Sources/main.c" FileDate="2018-07-16, 19:22:20" FileAge="1531761740977" FileType="128" />
+      <File Name="Generated_Code/FT800_SPI.c" FileDate="2018-07-16, 19:22:20" FileAge="1531761740809" FileType="45637" CompNumb="53" />
       <File Name="Generated_Code/LED_Red.h" FileDate="2018-07-13, 17:51:42" FileAge="1531497102013" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/MCUC1config.h" FileDate="2018-07-14, 15:59:25" FileAge="1531576765317" FileType="45637" CompNumb="24" />
       <File Name="Generated_Code/LED_Red.c" FileDate="2018-07-13, 17:51:42" FileAge="1531497102008" FileType="45637" CompNumb="8" />
@@ -60,5 +68,5 @@
       <File Name="Generated_Code/ACCEL1.h" FileDate="2018-07-15, 09:31:18" FileAge="1531639878520" FileType="45637" CompNumb="37" />
     </GeneratedByPE>
   </GeneratedFilesList>
-  <CodeGenReference>23</CodeGenReference>
+  <CodeGenReference>26</CodeGenReference>
 </CodeGenerationInfo>

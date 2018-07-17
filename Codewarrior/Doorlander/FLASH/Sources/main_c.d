@@ -35,4 +35,8 @@ Sources/main_c.obj: C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Sources\m
 	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\Attn1.h \
 	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\CI2C1.h \
 	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\Irq1.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\FT800_SPI.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\SPI1.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\FT800_nPowerDown.h \
+	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Generated_Code\FT800_nCS.h \
 	C:\projekte\Repo\Doorlander\Codewarrior\Doorlander\Sources\Battery.h 

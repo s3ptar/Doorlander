@@ -174,6 +174,41 @@ Module "CI2C1"     (component I2C)
    - CI2C1_CheckBus -This method returns the status of the bus. If the START condition has been detected, the method returns 
                 'ComponentName'_BUSY. If the STOP condition has been detected, the method returns 'ComponentName'_IDLE.
 
+Module "FT800_SPI" (component GenericSPI)
+   - FT800_SPI_RecvChar -
+   - FT800_SPI_SendChar -
+   - FT800_SPI_ClearReceiveStatReg -Clears the status register
+   - FT800_SPI_ClearReceiveDataReg -Clears the data register
+   - FT800_SPI_WaitTransferDone -Waits until the transfer is done
+   - FT800_SPI_WriteDummy_Read -Writes a dummy value to the SPI bus and returns the value read from the bus.
+   - FT800_SPI_Write_ReadDummy -Writes a value to the SPI bus and ignores the value read back from the bus.
+
+Module "FT800_nPowerDown" (component BitIO)
+   - FT800_nPowerDown_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is 
+                read and returned. If the direction is [output] then the last written value is returned (see <Safe mode> 
+                property for limitations). This method cannot be disabled if direction is [input].
+   - FT800_nPowerDown_PutVal -The specified output value is set. If the direction is [input], the component saves the value to 
+                a memory or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+   - FT800_nPowerDown_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is 
+                available only if the direction = _[output]_ or _[input/output]_.
+   - FT800_nPowerDown_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+
+Module "FT800_nCS" (component BitIO)
+   - FT800_nCS_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
+                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
+                limitations). This method cannot be disabled if direction is [input].
+   - FT800_nCS_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a 
+                memory or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+   - FT800_nCS_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available 
+                only if the direction = _[output]_ or _[input/output]_.
+   - FT800_nCS_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if 
+                the direction = _[output]_ or _[input/output]_.
+
 Module "Cpu"       (component MCF51JM128_64)
    - Cpu_EnableInt -Enables maskable interrupts
    - Cpu_DisableInt -Disables maskable interrupts
